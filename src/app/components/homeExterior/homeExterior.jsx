@@ -32,7 +32,7 @@ const HomeExterior = () => {
   };
 
   return (
-    <div className="bg-black min-h-[70vh] flex items-center justify-center py-12">
+    <div className="bg-white min-h-[70vh] flex items-center justify-center py-12">
       <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] max-w-5xl w-full">
         {/* Left Side (Image) */}
         <motion.div
@@ -55,7 +55,7 @@ const HomeExterior = () => {
           initial="hidden"
           animate={textControls}
           variants={textVariants}
-          className="p-10 flex flex-col justify-start text-white"
+          className="p-10 flex flex-col justify-start text-black"
         >
           <motion.span
             className="inline-block text-2xl uppercase border-b-4 mb-6 text-[#00C6F9]"

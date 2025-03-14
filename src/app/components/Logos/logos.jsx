@@ -28,7 +28,7 @@ const ClientLogos = () => {
   const secondRow = [...clients.slice(9, 18)];
 
   return (
-    <section className="bg-black py-12">
+    <section className="bg-white py-12">
     <h2 className="mb-12 text-[2.5rem] font-semibold text-[#00C6F9] text-center uppercase tracking-[2px] md:text-[2rem]">
         Some of our valuable clients
       </h2>

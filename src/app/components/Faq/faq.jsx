@@ -2,7 +2,7 @@
 "use client";
 import { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
-import Bubble from "../../../../public/animations/Water Splash.json"; // Adjust path as needed
+import Bubble from "../../../../public/animations/Water Drop (2).json"; // Adjust path as needed
 import Lottie from "lottie-react";
 
 const FAQ = () => {
@@ -51,15 +51,15 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black py-16 px-4 sm:px-6 lg:px-8 relative">
+    <div className="min-h-screen bg-white py-16 px-4 sm:px-6 lg:px-8 relative">
          <div className="absolute inset-0 z-0 opacity-50 overflow-hidden">
         <Lottie
-          animationData={Bubble}
+          // animationData={Bubble}
           loop={true}
           style={{ 
             width: '100%',
             height: '100%',
-            transform: 'scale(2)' // Scale up the animation
+            // transform: 'scale(2)' // Scale up the animation
           }}
           rendererSettings={{
             preserveAspectRatio: 'xMidYMid slice' // Cover entire area
@@ -83,23 +83,23 @@ const FAQ = () => {
           {faqItems.map((item, index) => (
             <div
               key={index}
-              className={`transition-all duration-300 border-b border-gray-800 ${
+              className={`transition-all duration-300 border-b border-sky-800 ${
                 activeIndex === index ? "border-b-0" : ""
               }`}
             >
               <button
-                className="flex justify-between items-center w-full p-4 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 bg-black"
+                className="flex justify-between items-center w-full p-4 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 bg-[#00C6F9]"
                 onClick={() =>
                   setActiveIndex(activeIndex === index ? null : index)
                 }
               >
-                <span className="text-lg font-medium text-[#00C6F9] hover:text-[#00C6F9] transition-colors">
+                <span className="text-lg font-medium text-white hover:text-[#00C6F9] transition-colors">
                   {item.question}
                 </span>
                 {activeIndex === index ? (
-                  <FaMinus className="h-6 w-6 text-[#00C6F9]" />
+                  <FaMinus className="h-6 w-6 text-white" />
                 ) : (
-                  <FaPlus className="h-6 w-6 text-[#00C6F9]" />
+                  <FaPlus className="h-6 w-6 text-white" />
                 )}
               </button>
 
@@ -110,7 +110,7 @@ const FAQ = () => {
                     : "max-h-0 opacity-0"
                 }`}
               >
-                <p className="text-gray-200">{item.answer}</p>
+                <p className="text-black-200">{item.answer}</p>
               </div>
             </div>
           ))}

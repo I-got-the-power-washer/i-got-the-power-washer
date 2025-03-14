@@ -46,12 +46,13 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-black relative">
+    <nav className="bg-white relative">
      {/* Lottie Background Animation - Modified */}
      <div className="absolute inset-0 z-0 opacity-50 overflow-hidden">
         <Lottie
           animationData={Bubble}
           loop={true}
+          speed={0.1}
           style={{ 
             width: '100%',
             height: '100%',
@@ -104,8 +105,8 @@ const Navbar = () => {
           <ul className="flex flex-col mt-4 font-medium md:flex-row md:mt-0 md:space-x-8 rtl:space-x-reverse">
             <li>
               <a
-                href="#"
-                className="flex items-center py-2 px-3 text-white hover:text-[#00C6F9]"
+                href="/"
+                className="flex items-center py-2 px-3 text-[#00C6F9] hover:text-[#80a2d4]"
               >
                 <FaHome className="mr-2" />
                 Home
@@ -119,22 +120,24 @@ const Navbar = () => {
                   e.stopPropagation();
                   toggleDropdown("about");
                 }}
-                className="flex items-center py-2 px-3 text-white hover:text-[#00C6F9]"
+                className="flex items-center py-2 px-3 text-[#00C6F9] hover:text-[#00C6F9] "
               >
+                
                 <FaBuilding className="mr-2" />
-                About Us
+                <a href="/about-us">
+                About Us</a>
                 <FaChevronDown className="ml-2" />
               </button>
               {openDropdown === "about" && (
-                <div className="absolute z-10 w-auto text-sm bg-black border border-gray-700 rounded-lg shadow-md">
-                  <ul className="p-4 space-y-4 text-white">
+                <div className="absolute z-10 w-auto text-sm bg-white border border-sky-300 rounded-lg shadow-md">
+                  <ul className="p-4 space-y-4 text-[#00C6F9]">
                     <li>
-                      <a href="#" className="hover:text-[#00C6F9]">
+                      <a href="/annual-maintenance-program" className="hover:text-[#00C6F9]">
                         Annual Maintenance Program
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="hover:text-[#00C6F9]">
+                      <a href="/the-clean-team" className="hover:text-[#00C6F9]">
                         The Clean Team
                       </a>
                     </li>
@@ -170,15 +173,15 @@ const Navbar = () => {
                   e.stopPropagation();
                   toggleDropdown("residential");
                 }}
-                className="flex items-center py-2 px-3 text-white hover:text-[#00C6F9]"
+                className="flex items-center py-2 px-3 text-[#00C6F9] hover:text-[#00C6F9]"
               >
                 <FaUsers className="mr-2" />
                 Residential
                 <FaChevronDown className="ml-2" />
               </button>
               {openDropdown === "residential" && (
-                <div className="absolute z-10 w-auto text-sm bg-black border border-gray-700 rounded-lg shadow-md">
-                  <ul className="p-4 space-y-4 text-white">
+                <div className="absolute z-10 w-auto text-sm bg-white border border-sky-300 rounded-lg shadow-md">
+                  <ul className="p-4 space-y-4 text-[#00C6F9]">
                     <li>
                       <a href="#" className="hover:text-[#00C6F9]">
                         Pressure Washing
@@ -221,15 +224,15 @@ const Navbar = () => {
                   e.stopPropagation();
                   toggleDropdown("commercial");
                 }}
-                className="flex items-center py-2 px-3 text-white hover:text-[#00C6F9]"
+                className="flex items-center py-2 px-3 text-[#00C6F9] hover:text-[#00C6F9]"
               >
                 <FaHandshake className="mr-2" />
                 Commercial
                 <FaChevronDown className="ml-2" />
               </button>
               {openDropdown === "commercial" && (
-                <div className="absolute z-10 min-w-[200px] text-sm bg-black border border-gray-700 rounded-lg shadow-md">
-                  <ul className="p-4 space-y-4 text-white">
+                <div className="absolute z-10 min-w-[200px] text-sm bg-white border border-sky-300 rounded-lg shadow-md">
+                  <ul className="p-4 space-y-4 text-[#00C6F9]">
                     <li>
                       <a href="#" className="hover:text-[#00C6F9]">
                         Building Wash
@@ -274,8 +277,8 @@ const Navbar = () => {
                         <FaChevronRight className="ml-2" />
                       </button>
                       {openSubDropdown === "stainRemoval" && (
-                        <div className="absolute left-full top-0 z-10 min-w-[220px] bg-black border border-gray-700 rounded-lg shadow-md">
-                          <ul className="p-4 space-y-4 text-white">
+                        <div className="absolute left-full top-0 z-10 min-w-[220px] bg-white border border-sky-300 rounded-lg shadow-md">
+                          <ul className="p-4 space-y-4 text-[#00C6F9]">
                             <li>
                               <a href="#" className="hover:text-[#00C6F9]">
                                 Graffiti Removal
@@ -324,8 +327,8 @@ const Navbar = () => {
                         <FaChevronRight className="ml-2" />
                       </button>
                       {openSubDropdown === "parking" && (
-                        <div className="absolute left-full top-0 z-10 min-w-[220px] bg-black border border-gray-700 rounded-lg shadow-md">
-                          <ul className="p-4 space-y-4 text-white">
+                        <div className="absolute left-full top-0 z-10 min-w-[220px] bg-white border border-sky-300 rounded-lg shadow-md">
+                          <ul className="p-4 space-y-4 text-[#00C6F9]">
                             <li>
                               <a href="#" className="hover:text-[#00C6F9]">
                               Parking Lot Washing
@@ -358,15 +361,15 @@ const Navbar = () => {
                   e.stopPropagation();
                   toggleDropdown("gallery");
                 }}
-                className="flex items-center py-2 px-3 text-white hover:text-[#00C6F9]"
+                className="flex items-center py-2 px-3 text-[#00C6F9] hover:text-[#00C6F9]"
               >
                 <FaImages className="mr-2" />
                 Gallery
                 <FaChevronDown className="ml-2" />
               </button>
               {openDropdown === "gallery" && (
-                <div className="absolute z-10 w-auto text-sm bg-black border border-gray-700 rounded-lg shadow-md">
-                  <ul className="p-4 space-y-4 text-white">
+                <div className="absolute z-10 w-auto text-sm bg-white border border-sky-300 rounded-lg shadow-md">
+                  <ul className="p-4 space-y-4 text-[#00C6F9]">
                     <li>
                       <a href="#" className=" hover:text-[#00C6F9]">Commercial-Gallery</a>
                     </li>
@@ -382,7 +385,7 @@ const Navbar = () => {
             <li>
               <a
                 href="#"
-                className="flex items-center py-2 px-3 text-white hover:text-[#00C6F9]"
+                className="flex items-center py-2 px-3 text-[#00C6F9] hover:text-[#00C6F9]"
               >
                 <FaTools className="mr-2" />
                 Seal Solutions

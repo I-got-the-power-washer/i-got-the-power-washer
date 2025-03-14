@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Lottie from 'lottie-react';
 import BubblesAnimation from '../../../../public/animations/Bubbles';
-import ManCleaningWindow from '../../../../public/animations/Man Cleaning Window.json'
+import ManCleaningWindow from '../../../../public/animations/Worker washing windows of the modern building.json'
 import Gutter from "../../../../public/animations/Man doing Gutter Cleaning.json"
 import Professional from "../../../../public/animations/Man doing Power Washing.json"
 import Stain from "../../../../public/animations/stain-cleaning.json" // Adjust path as needed
@@ -115,7 +115,7 @@ const Card = ({ animationData, name, about }) => {
 };
 
 const SectionContainer = styled.section`
-  background: #000;
+  background: #fff;
   padding: 4rem 2rem;
   min-height: 100vh;
   display: flex;

@@ -5,7 +5,7 @@ const RequestEstimateForm = () => {
   const [customerType, setCustomerType] = useState("residential");
 
   return (
-    <section className="bg-black min-h-screen flex items-center justify-center py-12 ">
+    <section className="bg-white min-h-screen flex items-center justify-center py-12 ">
       <div className="max-w-3xl w-full p-8 bg-white shadow-lg rounded-lg border-4 border-[#00C6F9]">
         {/* Heading */}
         <h2 className="mb-6 text-[2.5rem] font-bold text-[#00C6F9] text-center uppercase tracking-[2px] md:text-[2rem]">

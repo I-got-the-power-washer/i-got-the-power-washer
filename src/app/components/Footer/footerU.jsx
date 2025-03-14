@@ -14,11 +14,12 @@ import Lottie from "lottie-react";
 
 const FooterU = () => {
   return (
-    <footer className="bg-black text-[#00C6F9] py-10 px-4 relative">
+    <footer className="bg-white text-[#00C6F9] py-10 px-4 relative">
        <div className="absolute inset-0 z-0 opacity-50 overflow-hidden">
         <Lottie
           animationData={Bubble}
           loop={true}
+          speed={0.1}
           style={{ 
             width: '100%',
             height: '100%',
@@ -124,7 +125,7 @@ const FooterU = () => {
 
       {/* Bottom Bar */}
       <div className="max-w-6xl mx-auto mt-10 border-t border-[#00C6F9] pt-4 text-center text-sm text-[#00C6F9]">
-        <p>© Eyez On The Prize Auto-Spa 2024</p>
+        <p>© I got the Power Washer 2025</p>
       </div>
     </footer>
   );
