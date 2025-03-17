@@ -1,18 +1,66 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect  ,useState, useRef} from "react";
 import { motion, useAnimation } from "framer-motion";
 import { FaPhoneAlt } from "react-icons/fa"; // Importing phone icon
 import Link from "next/link";
 import Team from "../Team/team";
 
+// Job Offer Popup Component (No Close Button)
+const PopupJobOffer = () => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+      className="bg-blue-300 p-6 rounded-lg w-[90%] max-w-3xl mx-auto mt-4"
+    >
+      <h2 className="text-lg font-bold text-white mb-2">
+        Looking for a job? We are hiring!
+      </h2>
+      <p className="text-white">
+        If you are in the area of Cincinnati, we are interested.
+      </p>
+      <p className="text-white">
+        Whether you like to be on a team or want to run solo, we can fit you in at any time of the week.
+      </p>
+      <p className="text-white font-semibold mt-2">Apply here!</p>
+      <a
+        href="#"
+        className="inline-block mt-4 bg-blue-900 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700"
+      >
+        Apply Now!
+      </a>
+    </motion.div>
+  );
+};
+
 const Owner = () => {
   const controls = useAnimation();
   const textControls = useAnimation();
+  const [showPopup, setShowPopup] = useState(false);
+  const teamRef = useRef(null);
 
   useEffect(() => {
     controls.start("visible");
     textControls.start("visible");
   }, [controls, textControls]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowPopup(true);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (teamRef.current) {
+      observer.observe(teamRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const imageVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -255,7 +303,11 @@ const Owner = () => {
           </motion.div>
         </div>
       </div>
-      <Team/>
+      <div ref={teamRef}>
+        <Team />
+      </div>
+        {/* Show popup when scrolled to Team section */}
+        {showPopup && <PopupJobOffer />}
     </>
   );
 };

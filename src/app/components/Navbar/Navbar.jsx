@@ -145,7 +145,7 @@ const Navbar = () => {
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="hover:text-[#00C6F9]">
+                      <a href="/career" className="hover:text-[#00C6F9]">
                         Career
                       </a>
                     </li>
@@ -186,7 +186,7 @@ const Navbar = () => {
                 <div className="absolute z-10 w-auto text-sm bg-white border border-sky-300 rounded-lg shadow-md">
                   <ul className="p-4 space-y-4 text-[#00C6F9]">
                     <li>
-                      <a href="#" className="hover:text-[#00C6F9]">
+                      <a href="/pressure-washing" className="hover:text-[#00C6F9]">
                         Pressure Washing
                       </a>
                     </li>
