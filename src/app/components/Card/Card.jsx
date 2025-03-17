@@ -1,7 +1,8 @@
 "use client";
 import React from 'react';
 import styled from 'styled-components';
-import Lottie from 'lottie-react';
+import dynamic from "next/dynamic";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import BubblesAnimation from '../../../../public/animations/Bubbles';
 // const BubblesAnimation='../../../../public/animations/Bubbles'
 import ManCleaningWindow from '../../../../public/animations/Worker washing windows of the modern building.json'

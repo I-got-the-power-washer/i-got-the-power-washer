@@ -10,7 +10,8 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import Bubble from "../../../../public/animations/Bubbles.json"; // Adjust path as needed
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const FooterU = () => {
   return (

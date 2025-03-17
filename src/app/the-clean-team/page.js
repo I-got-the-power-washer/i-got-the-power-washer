@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import Annual from "../components/AnnaulMaintainance/AnnualM";
+
 import Owner from "../components/Owner/Owner";
 
 const AnimatedHeader = () => {

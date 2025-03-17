@@ -1,4 +1,5 @@
 "use client";
+import dynamic from "next/dynamic";
 
 import { useState, useEffect } from "react";
 import {
@@ -13,7 +14,9 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 import Bubble from "../../../../public/animations/Bubbles.json"; // Adjust path as needed
-import Lottie from "lottie-react";
+// import Lottie from "lottie-react";
+// Import Lottie dynamically to avoid SSR issues
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);

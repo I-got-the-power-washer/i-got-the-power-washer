@@ -2,8 +2,8 @@
 "use client";
 import { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
-import Bubble from "../../../../public/animations/Water Drop (2).json"; // Adjust path as needed
-import Lottie from "lottie-react";
+import dynamic from "next/dynamic";
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
