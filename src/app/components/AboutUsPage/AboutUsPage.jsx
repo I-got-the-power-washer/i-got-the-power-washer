@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
-const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+// const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 import animationData from "../../../../public/animations/commercial-heading.json";
 
 const AboutPage = () => {
