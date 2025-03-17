@@ -10,7 +10,7 @@ const aboutPage = () => {
   return (
     <div>
       <head>
-      <link rel="canonical" href="https://www.eyezontheprizeautospa.com/about-us" />
+      <link rel="canonical" href="https://www.com/about-us" />
       </head>
         <div className="relative min-h-[60vh] bg-gradient-to-r from-[#00C6F9] to-white bg-center bg-no-repeat bg-cover z-0">
 

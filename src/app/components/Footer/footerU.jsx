@@ -46,26 +46,26 @@ const FooterU = () => {
             <a href="/">
               <img
                 src="/images/uft.png"
-                alt="Eyez on the Prize Logo"
+                alt="I got the power washer"
                 className="w-32 h-auto"
               />
             </a>
           </div>
 
           <div className="flex space-x-4 text-[#00C6F9] text-xl ">
-            <a href="https://www.facebook.com/EyezPrizeAutoSpa" target="_blank" rel="noopener noreferrer" className="hover:text-[#912ED9]">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="hover:text-[#912ED9]">
               <FaFacebook />
             </a>
-            <a href="https://www.instagram.com/eyezontheprizeautospa/#" target="_blank" rel="noopener noreferrer" className="hover:text-[#912ED9]">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="hover:text-[#912ED9]">
               <FaInstagram />
             </a>
-            <a href="https://www.tiktok.com/@eyezontheprizeautospa" target="_blank" rel="noopener noreferrer" className="hover:text-[#912ED9]">
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" className="hover:text-[#912ED9]">
               <FaTiktok />
             </a>
-            <a href="https://www.google.com/search?q=Eyez+On+The+Prize+Auto-Spa" target="_blank" rel="noopener noreferrer" className="hover:text-[#912ED9]">
+            <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" className="hover:text-[#912ED9]">
               <FaGoogle />
             </a>
-            <a href="https://www.youtube.com/@eyezontheprizeautospa" target="_blank" rel="noopener noreferrer" className="hover:text-[#912ED9]">
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" className="hover:text-[#912ED9]">
               <FaYoutube />
             </a>
           </div>
@@ -77,11 +77,11 @@ const FooterU = () => {
           <div className="flex flex-col space-y-2">
             <div className="flex items-center space-x-2">
               <FaPhoneAlt className="text-[#00C6F9]" />
-              <a href="tel:+19803070431">(980) 307-0431</a>
+              <a href="tel:5135700355">(513) 570-0355</a>
             </div>
             <div className="flex items-center space-x-2">
               <FaEnvelope className="text-[#00C6F9]" />
-              <a href="mailto:eyezontheprizeautospa@gmail.com">eyezontheprize@gmail.com</a>
+              <a href="mailto:igotthepowerwasher@gmail.com">igotthepowerwasher@gmail.com</a>
             </div>
           </div>
         </div>

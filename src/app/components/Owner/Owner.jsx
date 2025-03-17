@@ -107,7 +107,7 @@ const Owner = () => {
                 variants={textVariants}
               >
                 <FaPhoneAlt className="mr-2" />
-                <Link href="tel:+18134269257">(813) 426-9257</Link>
+                <Link href="tel:+15135700355">(513) 570-0355</Link>
               </motion.button>
             </motion.div>
           </motion.div>
