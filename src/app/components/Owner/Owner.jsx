@@ -113,7 +113,7 @@ const Owner = () => {
           </motion.div>
         </div>
       </div>
-      <div className="lg:pl-45 lg:pr-45 pl-10 pr-10 flex flex-col justify-start text-black">
+      <div className="lg:pl-45 lg:pr-45 pl-10 pr-10 flex flex-col justify-start text-black bg-white">
         <motion.p
           className="mt-4 text-md opacity-90 text-justify"
           variants={textVariants}
