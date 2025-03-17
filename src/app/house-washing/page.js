@@ -22,7 +22,7 @@ const HouseWashing = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            Top-Quality Pressure Washing Services in Cincinnati, Ohio
+            House Washing Services in Cincinnati, OH
           </motion.h1>
 
           {/* Breadcrumb Animation */}
@@ -43,7 +43,7 @@ const HouseWashing = () => {
               >
                 <FaLongArrowAltRight className="text-lg text-sky-300" />
               </motion.span>
-              Pressure Washing
+              Get The Grime!
             </div>
           </motion.div>
         </div>

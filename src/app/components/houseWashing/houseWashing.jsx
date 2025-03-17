@@ -148,13 +148,13 @@ const HouseComponent = () => {
     transition={{ duration: 0.6 }}
     className="prose-xl text-gray-800 order-2 md:order-1 bg-white rounded-xl p-8 shadow-lg"
   >
-    <div className="border-l-4 border-blue-500 pl-6">
+    <div className="border-l-4 border-sky-500 pl-6">
       <h3 className="text-3xl font-bold text-gray-900 mb-6 leading-tight">
         Understanding Flash Oxidation on Vinyl
       </h3>
       <div className="space-y-6">
         <p className="text-lg text-gray-700 leading-relaxed">
-          If you've noticed unusual <strong className="text-blue-600">orange, red, or pink streaks</strong> on your vinyl siding or gutters post-cleaning, you're likely witnessing flash oxidation. This common phenomenon occurs when cleaning solutions interact with natural oxidation present on vinyl surfaces.
+          If you've noticed unusual <strong className="text-sky-600">orange, red, or pink streaks</strong> on your vinyl siding or gutters post-cleaning, you're likely witnessing flash oxidation. This common phenomenon occurs when cleaning solutions interact with natural oxidation present on vinyl surfaces.
         </p>
         
         <div className="bg-blue-50 rounded-lg p-4 border border-blue-100">
