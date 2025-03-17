@@ -16,7 +16,7 @@ const concreteSealing = () => {
     },
   ];
   return (
-    <div>
+    <div className="bg-white">
       <div className="relative flex items-center justify-center min-h-[60vh] bg-[#00C6F9] to-white bg-center bg-no-repeat bg-cover z-0">
         {/* Background Overlay */}
         <div className="absolute inset-0 bg-[url('/images/pages-bg.jpg')] bg-center bg-no-repeat bg-cover opacity-[0.26] transition-all duration-300"></div>
