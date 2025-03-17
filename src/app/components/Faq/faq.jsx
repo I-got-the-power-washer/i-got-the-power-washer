@@ -110,7 +110,7 @@ const FAQ = () => {
                     : "max-h-0 opacity-0"
                 }`}
               >
-                <p className="text-black-200">{item.answer}</p>
+                <p className="text-black">{item.answer}</p>
               </div>
             </div>
           ))}

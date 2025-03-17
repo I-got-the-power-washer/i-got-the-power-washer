@@ -85,7 +85,7 @@ const Navbar = () => {
         <div className="flex items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
           <a
             href="#"
-            className="text-white bg-[#00C6F9] hover:bg-blue-500 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+            className="text-white bg-[#00C6F9] hover:bg-blue-500 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5  focus:outline-none "
           >
             Free Estimate
           </a>
@@ -94,7 +94,7 @@ const Navbar = () => {
               e.stopPropagation();
               setMenuOpen(!menuOpen);
             }}
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-sky-400 rounded-lg md:hidden hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600"
           >
             <span className="sr-only">Open main menu</span>
             <FaBars className="w-5 h-5" />
