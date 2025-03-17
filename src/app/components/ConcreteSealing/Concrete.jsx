@@ -104,7 +104,7 @@ const Concrete = () => {
 
             </h3>
             
-            <div className="grid md:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-4 gap-6 ">
               {[
                 { title: "Stain Resistance:", text: "Sealing prevents oil, grease, and other stains from penetrating the surface." },
                 { title: "Weather Protection:", text: "Our sealant shields your concrete from Ohio’s freeze-thaw cycles, rain, and UV damage." },
@@ -117,7 +117,7 @@ const Concrete = () => {
                   whileHover={{ y: -5 }}
                 >
                   <div className="text-blue-500 text-xl font-bold mb-2">0{index + 1}</div>
-                  <h4 className="text-lg font-semibold mb-2">{step.title}</h4>
+                  <h4 className="text-lg font-semibold mb-2 text-black">{step.title}</h4>
                   <p className="text-gray-600 text-sm">{step.text}</p>
                 </motion.div>
               ))}

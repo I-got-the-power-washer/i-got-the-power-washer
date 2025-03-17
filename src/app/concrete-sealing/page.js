@@ -42,7 +42,7 @@ const concreteSealing = () => {
             transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
             viewport={{ once: true }}
           >
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2 items-center ">
               Residential
               <motion.span
                 initial={{ opacity: 0, y: 50 }}
@@ -60,7 +60,7 @@ const concreteSealing = () => {
 
       <Concrete />
       <GalleryPage images={PressureImages} />
-      <div className="mt-16 bg-blue-50 rounded-xl p-8">
+      <div className="mt-16 bg-blue-50 rounded-xl p-8 ">
         <h3 className="text-2xl font-bold text-gray-900 mb-6">
           Explore More Sealing Solutions
         </h3>
@@ -120,7 +120,7 @@ const concreteSealing = () => {
         </div>
       </div>
       <motion.div 
-  className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-4 lg:px-8 max-w-6xl mx-auto"
+  className="grid grid-cols-1 sm:grid-cols-2 gap-8 px-4 lg:px-8 max-w-6xl mx-auto "
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true }}
@@ -146,7 +146,7 @@ const concreteSealing = () => {
       }}
     >
       {/* Image Container with Adjusted Height */}
-      <div className="aspect-[4/3] lg:aspect-[5/3] overflow-hidden">
+      <div className="aspect-[4/3] lg:aspect-[5/3] overflow-hidden bg-white mt-2">
         <img
           src={item.src}
           alt={item.alt}
