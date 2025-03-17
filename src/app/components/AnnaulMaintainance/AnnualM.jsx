@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import Lottie from "lottie-react";
-import animationData from "../../../../public/animations/commercial-heading.json";
+// import Lottie from "lottie-react";
+// import animationData from "../../../../public/animations/commercial-heading.json";
 
 const Annual = () => {
   return (

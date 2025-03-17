@@ -7,7 +7,7 @@ import ManCleaningWindow from '../../../../public/animations/Worker washing wind
 import Gutter from "../../../../public/animations/Man doing Gutter Cleaning.json"
 import Professional from "../../../../public/animations/Man doing Power Washing.json"
 import Stain from "../../../../public/animations/stain-cleaning.json" // Adjust path as needed
-import Check from "../../../../public/animations/Flood natural disaster.json"
+import Check from "../../../../public/animations/Flood.json"
 import waterdrop from '../../../../public/animations/Floor Washing.json'
 
 const ServicesSection = () => {
