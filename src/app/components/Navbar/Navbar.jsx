@@ -196,7 +196,7 @@ const Navbar = () => {
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="hover:text-[#00C6F9]">
+                      <a href="house-washing" className="hover:text-[#00C6F9]">
                         House Washing
                       </a>
                     </li>
