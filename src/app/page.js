@@ -6,7 +6,8 @@ import FAQ from "./components/Faq/faq";
 import RequestEstimateForm from "./components/homeForm/RequestEstimateForm";
 import HomeExterior from "./components/homeExterior/homeExterior";
 import CommercialServicesSection from "./components/Commercial/Commercial";
-import Testimonial from "./components/Review/Review";
+import Review from "./components/Review/Review";
+
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
    
      <RequestEstimateForm/>
      <HomeExterior/>
-     <Testimonial/>
+   <Review/>
      <FAQ/>
      
     
