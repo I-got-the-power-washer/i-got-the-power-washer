@@ -196,22 +196,22 @@ const Navbar = () => {
                       </a>
                     </li>
                     <li>
-                      <a href="house-washing" className="hover:text-[#00C6F9]">
+                      <a href="/house-washing" className="hover:text-[#00C6F9]">
                         House Washing
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="hover:text-[#00C6F9]">
+                      <a href="/roof-washing" className="hover:text-[#00C6F9]">
                         Roof Washing
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="hover:text-[#00C6F9]">
+                      <a href="/window-cleaning-cincinnati" className="hover:text-[#00C6F9]">
                         Window Cleaning
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="hover:text-[#00C6F9]">
+                      <a href="/gutter-cleaning" className="hover:text-[#00C6F9]">
                         Gutter Cleaning
                       </a>
                     </li>
@@ -237,17 +237,17 @@ const Navbar = () => {
                 <div className="absolute z-10 min-w-[200px] text-sm bg-white border border-sky-300 rounded-lg shadow-md">
                   <ul className="p-4 space-y-4 text-[#00C6F9]">
                     <li>
-                      <a href="#" className="hover:text-[#00C6F9]">
+                      <a href="/building-wash" className="hover:text-[#00C6F9]">
                         Building Wash
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="hover:text-[#00C6F9]">
+                      <a href="/commercial-pressure-washing" className="hover:text-[#00C6F9]">
                         Commercial Pressure Washing
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="hover:text-[#00C6F9]">
+                      <a href="/commercial-gutter-cleaning" className="hover:text-[#00C6F9]">
                         Commercial Gutter Cleaning
                       </a>
                     </li>
