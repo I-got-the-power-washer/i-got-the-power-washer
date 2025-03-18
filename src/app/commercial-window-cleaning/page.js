@@ -19,7 +19,7 @@ const CommercialWind = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            Commercial Pressure Washing Services in Cincinnati, Ohio
+            Commercial Window Cleaning Services in Cincinnati, Ohio
           </motion.h1>
 
           {/* Breadcrumb Animation */}
