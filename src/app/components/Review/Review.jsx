@@ -8,7 +8,7 @@ const Review = () => {
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex flex-col items-center">
           <div className="text-center">
-            <p className="text-lg font-bold text-blue-600 font-pj">
+            <p className="text-lg font-bold text-sky-600 font-pj">
               Client Reviews
             </p>
             <h2 className="mt-4 text-2xl font-bold text-gray-900 sm:text-3xl xl:text-4xl font-pj">
@@ -19,7 +19,7 @@ const Review = () => {
           <div className="mt-8 text-center md:mt-16 md:order-3">
             <Link
               href="/review-page"
-              className="inline-flex items-center px-6 py-3 text-sm font-bold text-white transition-all duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 font-pj"
+              className="inline-flex items-center px-6 py-3 text-sm font-bold text-white transition-all duration-200 bg-[#00c6f9] rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 font-pj"
             >
               <img
                 src="/images/google-icon.svg"

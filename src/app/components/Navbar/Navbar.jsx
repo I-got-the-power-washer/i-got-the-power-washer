@@ -257,12 +257,12 @@ const Navbar = () => {
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="hover:text-[#00C6F9]">
+                      <a href="/restaurant" className="hover:text-[#00C6F9]">
                         Restaurant
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="hover:text-[#00C6F9]">
+                      <a href="/gas-station" className="hover:text-[#00C6F9]">
                         Gas Station
                       </a>
                     </li>
@@ -276,39 +276,39 @@ const Navbar = () => {
                         }}
                         className="flex items-center w-full text-left hover:text-[#00C6F9] "
                       >
-                        Stain Removal
+                        <a href="/stain-removal">Stain Removal</a>
                         <FaChevronRight className="ml-2" />
                       </button>
                       {openSubDropdown === "stainRemoval" && (
                         <div className="absolute left-full top-0 z-10 min-w-[220px] bg-white border border-sky-300 rounded-lg shadow-md">
                           <ul className="p-4 space-y-4 text-[#00C6F9]">
                             <li>
-                              <a href="#" className="hover:text-[#00C6F9]">
+                              <a href="/graffiti-removal" className="hover:text-[#00C6F9]">
                                 Graffiti Removal
                               </a>
                             </li>
                             <li>
-                              <a href="#" className="hover:text-[#00C6F9]">
+                              <a href="/rust-removal" className="hover:text-[#00C6F9]">
                                 Rust Removal
                               </a>
                             </li>
                             <li>
-                              <a href="#" className="hover:text-[#00C6F9]">
+                              <a href="/efflorescence-removal" className="hover:text-[#00C6F9]">
                                 Efflorescence Removal
                               </a>
                             </li>
                             <li>
-                              <a href="#" className="hover:text-[#00C6F9]">
+                              <a href="/gum-removal" className="hover:text-[#00C6F9]">
                                 Gum Removal
                               </a>
                             </li>
                             <li>
-                              <a href="#" className="hover:text-[#00C6F9]">
+                              <a href="/oil-removal" className="hover:text-[#00C6F9]">
                                 Oil Removal
                               </a>
                             </li>
                             <li>
-                              <a href="#" className="hover:text-[#00C6F9]">
+                              <a href="/grease-removal" className="hover:text-[#00C6F9]">
                                 Grease Removal
                               </a>
                             </li>
@@ -326,19 +326,19 @@ const Navbar = () => {
                         }}
                         className="flex items-center w-full text-left hover:text-[#00C6F9] "
                       >
-                        Parking Lot Maintenance
+                       <a href="/parking-lot-maintenance">Parking Lot Maintenance</a> 
                         <FaChevronRight className="ml-2" />
                       </button>
                       {openSubDropdown === "parking" && (
                         <div className="absolute left-full top-0 z-10 min-w-[220px] bg-white border border-sky-300 rounded-lg shadow-md">
                           <ul className="p-4 space-y-4 text-[#00C6F9]">
                             <li>
-                              <a href="#" className="hover:text-[#00C6F9]">
+                              <a href="/parking-lot-washing" className="hover:text-[#00C6F9]">
                               Parking Lot Washing
                               </a>
                             </li>
                             <li>
-                              <a href="#" className="hover:text-[#00C6F9]">
+                              <a href="/sweeping-cleaning" className="hover:text-[#00C6F9]">
                               Sweeping & Cleaning
                               </a>
                             </li>
@@ -348,7 +348,7 @@ const Navbar = () => {
                       )}
                     </li>
                     <li>
-                      <a href="#" className="hover:text-[#00C6F9]">
+                      <a href="/post-construction-clean-up" className="hover:text-[#00C6F9]">
                       Post Construction Clean Up
                       </a>
                     </li>
