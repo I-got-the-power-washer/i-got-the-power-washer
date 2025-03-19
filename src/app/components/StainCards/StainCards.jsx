@@ -9,18 +9,21 @@ const StainCards = () => {
       name: "Graffiti Removal",
       about: "Quickly remove graffiti and restore your surfaces. Our experts use effective cleaning solutions to erase unwanted marks, ensuring your property is clean.",
       imageSrc: "/images/Graffiti-removal-services.jpg",
+      link:"/graffiti-removal"
     },
     {
       id: 2,
       name: "Rust Removal",
       about: "Eliminate rust stains from various surfaces. We ensure rust removal without damaging your property, enhancing its appearance ",
       imageSrc: "/images/Rust-Removal.png",
+      link:"/rust-removal"
     },
     {
       id: 3,
       name: "Efflorescence Removal",
       about: "We use safe and effective methods to remove mineral buildup, restoring your brick, stone, or concrete surfaces to their original and perfect condition.",
       imageSrc: "/images/Efflorescence-Removal.png",
+      link:"/efflorescence-removal"
     },
  
   ];
@@ -51,7 +54,7 @@ const StainCards = () => {
               <h3 className="text-2xl font-bold mb-2">{card.name}</h3>
               <p className="text-lg mb-4">{card.about}</p>
               <button className="bg-white text-[#00C6F9] px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition-colors">
-                Learn More
+               <a href={card.link}>Learn More</a> 
               </button>
             </div>
           </div>

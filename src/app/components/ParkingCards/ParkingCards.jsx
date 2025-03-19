@@ -9,12 +9,14 @@ const ParkingCards = () => {
       name: "Parking Lot Washing",
       about: "Our parking lot washing service eliminates stains, grime, and debris, giving your lot a fresh, clean appearance. We ensure your property is very welcoming.",
       imageSrc: "/images/Parking-Lot-Washing.png",
+      link:"/parking-lot-washing"
     },
     {
       id: 2,
       name: "Sweeping & Cleaning",
       about: "We provide sweeping and cleaning for parking lots, removing dirt, leaves, and trash. Keep your lot neat and safe, enhancing both curb appeal and functionality. ",
       imageSrc: "/images/Sweeping-Cleaning.png",
+      link:"/sweeping-cleaning"
     },
    
  
@@ -46,7 +48,7 @@ const ParkingCards = () => {
               <h3 className="text-2xl font-bold mb-2">{card.name}</h3>
               <p className="text-lg mb-4">{card.about}</p>
               <button className="bg-white text-[#00C6F9] px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition-colors">
-                Learn More
+                <a href={card.link}>Learn More</a>
               </button>
             </div>
           </div>

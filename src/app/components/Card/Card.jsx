@@ -18,36 +18,43 @@ const ServicesSection = () => {
       id: 1,
       name: "Pressure Washing",
       about: "Professional exterior cleaning for homes and driveways",
+      link:"/pressure-washing",
       animationData: Professional,
+      
     },
     {
       id: 2,
-      name: "Roof Cleaning",
+      name: "House Washing",
       about: "Safe and effective roof stain removal services",
       animationData: Check,
+      link:"/house-washing"
     },
     {
       id: 3,
-      name: "Gutter Maintenance",
+      name: "Gutter Cleaning",
       about: "Complete gutter cleaning and protection solutions",
+      link:"/gutter-cleaning",
       animationData: Gutter,
     },
     {
       id: 4,
       name: "Window Cleaning",
       about: "Streak-free window cleaning services",
+      link:"/window-cleaning-cincinnati",
       animationData:  ManCleaningWindow,
     },
     {
       id: 5,
-      name: "Deck Restoration",
+      name: "Roof Washing",
       about: "Deck cleaning and sealing services",
+      link:"/roof-washing",
       animationData: BubblesAnimation,
     },
     {
       id: 6,
-      name: "Concrete Cleaning",
+      name: "Seal Solutions",
       about: "Driveway and sidewalk deep cleaning",
+      link:"/seal-solutions",
       animationData: Stain,
     },
   ];
@@ -65,6 +72,7 @@ const ServicesSection = () => {
             name={card.name}
             about={card.about}
             animationData={card.animationData}
+            link={card.link}
           />
         ))}
       </CardsGrid>
@@ -92,7 +100,7 @@ const LottieWrapper = ({ animationData }) => {
   }
 };
 
-const Card = ({ animationData, name, about }) => {
+const Card = ({ animationData, name, about,link }) => {
   return (
     <StyledWrapper>
       <div className="card">
@@ -108,7 +116,7 @@ const Card = ({ animationData, name, about }) => {
             <div className="service-name-container">
               <span className="service-name">{name}</span>
             </div>
-            <button className="button">Learn More</button>
+            <a href={link || "#"} className="button">Learn More</a>
           </div>
         </div>
       </div>

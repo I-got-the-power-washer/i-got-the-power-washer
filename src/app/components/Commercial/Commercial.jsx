@@ -8,7 +8,7 @@ import BubblesAnimation from '../../../../public/animations/Bubbles';
 import ManCleaningWindow from '../../../../public/animations/Worker washing windows of the modern building.json'
 import Gutter from "../../../../public/animations/Man doing Gutter Cleaning.json"
 import Professional from "../../../../public/animations/Man doing Power Washing.json"
-import Stain from "../../../../public/animations/stain-cleaning.json" // Adjust path as needed
+import Stain from "../../../../public/animations/Boy cleaning floor.json" // Adjust path as needed
 import Check from "../../../../public/animations/Flood.json"
 import waterdrop from '../../../../public/animations/Floor Washing.json'
 
@@ -18,36 +18,42 @@ const CommercialServicesSection = () => {
       id: 1,
       name: "Building Wash",
       about: "Professional exterior cleaning for homes and driveways",
+      link:"building-wash",
       animationData: Professional,
     },
     {
       id: 2,
       name: "Window Cleaning",
       about: "Safe and effective roof stain removal services",
+      link:"window-cleaning",
       animationData: Check,
     },
     {
       id: 3,
       name: "Gutter Cleaning",
       about: "Complete gutter cleaning and protection solutions",
+      link:"/gutter-cleaning",
       animationData: Gutter,
     },
     {
       id: 4,
-      name: "Parking Lot Maintenance",
+      name: "Parking Maintenance",
       about: "Streak-free window cleaning services",
+      link:"/parking-lot-maintenance",
       animationData:  ManCleaningWindow,
     },
     {
       id: 5,
       name: "Seal Solutions",
       about: "Deck cleaning and sealing services",
+      link:"/seal-solutions",
       animationData: BubblesAnimation,
     },
     {
       id: 6,
       name: "Stain Removal",
       about: "Driveway and sidewalk deep cleaning",
+      link:"/stain-removal",
       animationData: Stain,
     },
   ];
@@ -65,6 +71,7 @@ const CommercialServicesSection = () => {
             name={card.name}
             about={card.about}
             animationData={card.animationData}
+            link={card.link}
           />
         ))}
       </CardsGrid>
@@ -92,7 +99,7 @@ const LottieWrapper = ({ animationData }) => {
   }
 };
 
-const Card = ({ animationData, name, about }) => {
+const Card = ({ animationData, name, about,link }) => {
   return (
     <StyledWrapper>
       <div className="card">
@@ -108,7 +115,7 @@ const Card = ({ animationData, name, about }) => {
             <div className="service-name-container">
               <span className="service-name">{name}</span>
             </div>
-            <button className="button">Learn More</button>
+            <a href={link} className="button">Learn More</a>
           </div>
         </div>
       </div>
