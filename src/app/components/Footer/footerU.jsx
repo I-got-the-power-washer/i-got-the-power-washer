@@ -8,6 +8,8 @@ import {
   FaEnvelope,
   FaFacebook,
   FaYoutube,
+  FaSearchLocation,
+  FaLocationArrow,
 } from "react-icons/fa";
 import Bubble from "../../../../public/animations/Bubbles.json"; // Adjust path as needed
 import dynamic from "next/dynamic";
@@ -53,21 +55,16 @@ const FooterU = () => {
           </div>
 
           <div className="flex space-x-4 text-[#00C6F9] text-xl ">
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="hover:text-[#912ED9]">
+            <a href="https://www.facebook.com/tony.werner.94402?mibextid=LQQJ4d" target="_blank" rel="noopener noreferrer" className="hover:text-[#abd7f5]">
               <FaFacebook />
             </a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="hover:text-[#912ED9]">
+            <a href="https://www.instagram.com/igotthepowerwasher/" target="_blank" rel="noopener noreferrer" className="hover:text-[#ce6b6b]">
               <FaInstagram />
             </a>
-            <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" className="hover:text-[#912ED9]">
+            <a href="https://www.tiktok.com/@igotthepowerwasher" target="_blank" rel="noopener noreferrer" className="hover:text-[#070607]">
               <FaTiktok />
             </a>
-            <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer" className="hover:text-[#912ED9]">
-              <FaGoogle />
-            </a>
-            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" className="hover:text-[#912ED9]">
-              <FaYoutube />
-            </a>
+           
           </div>
 
           {/* Business Info Heading Moved Below Social Icons */}
@@ -82,6 +79,10 @@ const FooterU = () => {
             <div className="flex items-center space-x-2">
               <FaEnvelope className="text-[#00C6F9]" />
               <a href="mailto:igotthepowerwasher@gmail.com">igotthepowerwasher@gmail.com</a>
+            </div>
+            <div className="flex items-center space-x-2">
+              <FaLocationArrow className="text-[#00C6F9]" />
+              <a >3640 Werk Rd. Cincinnati, Ohio 45248</a>
             </div>
           </div>
         </div>
