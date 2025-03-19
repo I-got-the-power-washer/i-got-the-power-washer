@@ -18,7 +18,8 @@ const Review = () => {
 
           <div className="mt-8 text-center md:mt-16 md:order-3">
             <Link
-              href="/review-page"
+            target="_blank"
+              href="https://www.google.com/search?sca_esv=243c640e07014616&sxsrf=AHTn8zpFr1gGoTPewi6I6RuhDMP6Gu20og:1742409472514&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzeUPM_7-vOMb3MkE3IolVQmlNBx0tzuBEgx_qmRvqJuGgiTX60K7H372NYcAtg1rHcg_AL-DftKpEBugvecKuErN8Rke4AETwDqVElow0BzS9Zzvhw%3D%3D&q=I+Got+The+Power+Washer+LLC+Reviews&sa=X&ved=2ahUKEwihkqaN5ZaMAxXDywIHHYR0GckQ0bkNegQINxAD&biw=1366&bih=633&dpr=1"
               className="inline-flex items-center px-6 py-3 text-sm font-bold text-white transition-all duration-200 bg-[#00c6f9] rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 font-pj"
             >
               <img
@@ -43,19 +44,19 @@ const Review = () => {
 
             <div className="relative grid max-w-lg grid-cols-1 gap-6 mx-auto md:max-w-none lg:gap-10 md:grid-cols-3">
               {/* Review 1 */}
-              <Link href="https://www.google.com/maps/contrib/114936146757684090429/place/ChIJ59SvPWPXwogRcLEZKBauxX8/@27.8050131,-82.3106162,19z?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D">
+              <Link target="_blank" href="https://maps.app.goo.gl/sLB1rDY2w3t1aUvS9">
                 <div className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <div className="flex flex-col justify-between flex-1 p-6 bg-white lg:py-8 lg:px-7">
                     <div className="flex justify-between items-start">
                       <div className="flex items-center">
                         <img
                           className="flex-shrink-0 object-cover rounded-full w-11 h-11"
-                          src="/images/testimonial-up-1.png"
-                          alt="Jaye Webster"
+                          src="/images/unnamed (1).png"
+                          alt="Shelby Mundy"
                         />
                         <div className="ml-4">
                           <p className="text-base font-bold text-gray-900 font-pj">
-                            Jaye Webster
+                            Shelby Mundy
                           </p>
                           <p className="mt-0.5 text-sm font-pj text-gray-600">
                             August 29, 2024
@@ -83,8 +84,11 @@ const Review = () => {
                     </div>
                     <blockquote className="flex-1 mt-4">
                       <p className="text-lg leading-relaxed text-gray-900 font-pj">
-                        “Very easy to work with. Super professional service.
-                        Prompt! Would definitely recommend. I will use them again”
+                        “Tony was incredible! He was an extremely hard worker,
+                        came when he said he would be there and left our deck
+                        and driveway looking brand new. I’d recommend Tony and
+                        his team to anyone, and will definitely be using his
+                        services in the future.”
                       </p>
                     </blockquote>
                   </div>
@@ -93,22 +97,22 @@ const Review = () => {
 
               {/* Other reviews follow same structure with updated colors */}
               {/* Review 2 */}
-              <Link href="https://www.google.com/maps/contrib/114936146757684090429/place/ChIJ59SvPWPXwogRcLEZKBauxX8/@27.8050131,-82.3106162,19z?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D">
+              <Link target="_blank" href="https://maps.app.goo.gl/sjqicuqB8FYak6f27">
                 <div className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <div className="flex flex-col justify-between flex-1 p-6 bg-white lg:py-8 lg:px-7">
                     <div className="flex justify-between items-start">
                       <div className="flex items-center">
                         <img
                           className="flex-shrink-0 object-cover rounded-full w-11 h-11"
-                          src="/images/testimonial-up-1.png"
-                          alt="Jaye Webster"
+                          src="/images/unnamed (2).png"
+                          alt="Kathy Smith"
                         />
                         <div className="ml-4">
                           <p className="text-base font-bold text-gray-900 font-pj">
-                            Jaye Webster
+                            Kathy Smith
                           </p>
                           <p className="mt-0.5 text-sm font-pj text-gray-600">
-                            August 29, 2024
+                            8 months ago
                           </p>
                         </div>
                       </div>
@@ -133,8 +137,11 @@ const Review = () => {
                     </div>
                     <blockquote className="flex-1 mt-4">
                       <p className="text-lg leading-relaxed text-gray-900 font-pj">
-                        “Very easy to work with. Super professional service.
-                        Prompt! Would definitely recommend. I will use them again”
+                        “Tony and Brandon did an amazing job on my house and
+                        driveway. The house looks brand new! It’s 30 years old.
+                        Tony was well organized, time efficient, very
+                        knowledgeable and had excellent customer service
+                        skills.And best of all, he takes....”
                       </p>
                     </blockquote>
                   </div>
@@ -142,22 +149,22 @@ const Review = () => {
               </Link>
 
               {/* Review 3 */}
-              <Link href="https://www.google.com/maps/contrib/114936146757684090429/place/ChIJ59SvPWPXwogRcLEZKBauxX8/@27.8050131,-82.3106162,19z?entry=ttu&g_ep=EgoyMDI0MDgyNi4wIKXMDSoASAFQAw%3D%3D">
+              <Link target="_blank" href="https://maps.app.goo.gl/bgLtdAj3bWqTKPHq5">
                 <div className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <div className="flex flex-col justify-between flex-1 p-6 bg-white lg:py-8 lg:px-7">
                     <div className="flex justify-between items-start">
                       <div className="flex items-center">
                         <img
                           className="flex-shrink-0 object-cover rounded-full w-11 h-11"
-                          src="/images/testimonial-up-1.png"
-                          alt="Jaye Webster"
+                          src="/images/unnamed (3).png"
+                          alt="John Guluzian"
                         />
                         <div className="ml-4">
                           <p className="text-base font-bold text-gray-900 font-pj">
-                            Jaye Webster
+                          John Guluzian
                           </p>
                           <p className="mt-0.5 text-sm font-pj text-gray-600">
-                            August 29, 2024
+                            9 months ago
                           </p>
                         </div>
                       </div>
@@ -182,14 +189,12 @@ const Review = () => {
                     </div>
                     <blockquote className="flex-1 mt-4">
                       <p className="text-lg leading-relaxed text-gray-900 font-pj">
-                        “Very easy to work with. Super professional service.
-                        Prompt! Would definitely recommend. I will use them again”
+                        “I could not recommend Tony and his business any higher. He did a tremendous job on a large project (see before and after photos). He was efficient, on time, organized, and always in touch. He didn’t try to over-sell products and stuck to..”
                       </p>
                     </blockquote>
                   </div>
                 </div>
               </Link>
-
             </div>
           </div>
         </div>
