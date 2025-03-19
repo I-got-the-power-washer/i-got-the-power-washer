@@ -124,7 +124,7 @@ const FooterU = () => {
               Pages
             </h4>
             <a href="/">Home</a>
-            <a href="/our-team">Our Team</a>
+            <a href="/the-clean-team">Our Team</a>
             <a href="/services">Services</a>
             <a href="gallery">Gallery</a>
             <a href="/reviews">Reviews</a>
