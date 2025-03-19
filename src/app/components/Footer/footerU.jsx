@@ -90,36 +90,47 @@ const FooterU = () => {
         <div className="flex flex-col sm:flex-row items-start justify-between w-full md:w-2/3 space-y-8 sm:space-y-0 sm:space-x-8">
           <div className="flex flex-col sm:items-start space-y-2">
             <h4 className="font-semibold text-[#00C6F9] uppercase tracking-wide pb-1 border-b border-dotted border-[#00C6F9]">
+            Residential Services
+            </h4>
+            <a href="/pressure-washing">Pressure Washing</a>
+            <a href="/concrete-sealing">Concrete Sealing</a>
+            <a href="/house-washing">House Washing</a>
+            <a href="/roof-washing">Roof Washing</a>
+            <a href="/window-cleaning-cincinnati">Window Cleaning</a>
+            <a href="/gutter-cleaning">Gutter Cleaning</a>
+          
+          </div>
+
+          <div className="flex flex-col sm:items-start space-y-2">
+            <h4 className="font-semibold text-[#00C6F9] uppercase tracking-wide pb-1 border-b border-dotted border-[#00C6F9]">
+            Commercial Services
+            </h4>
+            <a href="/building-wash">Building Wash</a>
+            <a href="/commercial-pressure-washing">Commercial Pressure Washing</a>
+            <a href="/commercial-gutter-cleaning">Commercial Gutter Cleaning</a>
+            <a href="/commercial-window-cleaning">Commercial Window Cleaning</a>
+            <a href="/restaurant">Restaurant</a>
+            <a href="/stain-removal">Stain Removal</a>
+            <a href="/parking-lot-maintenance">Parking Lot Maintenance</a>
+            <a href="/post-construction-clean-up">Post Construction Clean Up</a>
+            
+
+            
+          </div>
+
+          <div className="flex flex-col sm:items-start space-y-2">
+            <h4 className="font-semibold text-[#00C6F9] uppercase tracking-wide pb-1 border-b border-dotted border-[#00C6F9]">
               Pages
             </h4>
             <a href="/">Home</a>
-            <a href="/about-us">About</a>
+            <a href="/our-team">Our Team</a>
             <a href="/services">Services</a>
-            <a href="/service-areas">Service Areas</a>
-            <a href="/gallery">Portfolio</a>
-            <a href="/contact-us">Contact</a>
-            <a href="https://book.squareup.com/appointments" className="hover:text-[#00C6F9]">Book Online</a>
-            <a href="/plans">Plans</a>
-          </div>
-
-          <div className="flex flex-col sm:items-start space-y-2">
-            <h4 className="font-semibold text-[#00C6F9] uppercase tracking-wide pb-1 border-b border-dotted border-[#00C6F9]">
-              Services
-            </h4>
-            <a href="/services/polishing">Polishing</a>
-            <a href="/services/ceramic-coating">Ceramic Coating</a>
-            <a href="/services/exterior-detailing">Exterior Detailing</a>
-            <a href="/services/interior-detailing">Interior Detailing</a>
-          </div>
-
-          <div className="flex flex-col sm:items-start space-y-2">
-            <h4 className="font-semibold text-[#00C6F9] uppercase tracking-wide pb-1 border-b border-dotted border-[#00C6F9]">
-              Additional Services
-            </h4>
-            <a href="/services/upholstery-cleaning">Upholstery Cleaning</a>
-            <a href="/services/engine-bay-detailing">Engine Bay Detailing</a>
-            <a href="/services/rv-detailing">RV Detailing</a>
-            <a href="/services/boating-detailing">Boating Detailing</a>
+            <a href="gallery">Gallery</a>
+            <a href="/reviews">Reviews</a>
+            <a href="/contact-us">Contact Us</a>
+            <a href="/blogs">Blogs</a>
+            <a href="/career">Career</a>
+            <a href="/pay-here">Pay Here</a>
           </div>
         </div>
       </div>
