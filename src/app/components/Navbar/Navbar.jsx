@@ -374,10 +374,10 @@ const Navbar = () => {
                 <div className="absolute z-10 w-auto text-sm bg-white border border-sky-300 rounded-lg shadow-md">
                   <ul className="p-4 space-y-4 text-[#00C6F9]">
                     <li>
-                      <a href="#" className=" hover:text-[#00C6F9]">Commercial-Gallery</a>
+                      <a href="/commercial-gallery" className=" hover:text-[#00C6F9]">Commercial-Gallery</a>
                     </li>
                     <li>
-                      <a href="#" className=" hover:text-[#00C6F9]" >Residential-Gallery</a>
+                      <a href="/residential-gallery" className=" hover:text-[#00C6F9]" >Residential-Gallery</a>
                     </li>
                   </ul>
                 </div>
@@ -387,7 +387,7 @@ const Navbar = () => {
             {/* Services */}
             <li>
               <a
-                href="#"
+                href="/seal-solutions"
                 className="flex items-center py-2 px-3 text-[#00C6F9] hover:text-[#00C6F9]"
               >
                 <FaTools className="mr-2" />

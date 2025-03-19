@@ -1,10 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
+import SealSolutions from "../components/Seal/Seal";
 
-
-import ConstructionRemoval from "../components/Construction/Construction";
-
-const Construction = () => {
+const Seal = () => {
   return (
     <div>
       <div className="relative flex items-center justify-center min-h-[60vh] bg-[#00C6F9] to-white bg-center bg-no-repeat bg-cover z-0">
@@ -21,7 +19,8 @@ const Construction = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            Affordable Post Construction Cleanup Services in Cincinnati, Ohio
+            Durable Seal Solutions for Long-Lasting Protection in Cincinnati,
+            Ohio
           </motion.h1>
 
           {/* Breadcrumb Animation */}
@@ -43,10 +42,9 @@ const Construction = () => {
           </motion.div>
         </div>
       </div>
-
-      <ConstructionRemoval/>
+      <SealSolutions />
     </div>
   );
 };
 
-export default Construction;
+export default Seal;

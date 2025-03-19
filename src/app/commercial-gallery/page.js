@@ -1,12 +1,12 @@
 "use client";
 import { motion } from "framer-motion";
+import CommercialGallery from "../components/CommercialGallery/commercialgallery";
 
 
-import ConstructionRemoval from "../components/Construction/Construction";
 
-const Construction = () => {
+const CommercialGall = () => {
   return (
-    <div>
+    <div className="bg-white">
       <div className="relative flex items-center justify-center min-h-[60vh] bg-[#00C6F9] to-white bg-center bg-no-repeat bg-cover z-0">
         {/* Background Overlay */}
         <div className="absolute inset-0 bg-[url('/images/pages-bg.jpg')] bg-center bg-no-repeat bg-cover opacity-[0.26] transition-all duration-300"></div>
@@ -21,7 +21,7 @@ const Construction = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            Affordable Post Construction Cleanup Services in Cincinnati, Ohio
+Our Commercial Cleaning and Washing Work
           </motion.h1>
 
           {/* Breadcrumb Animation */}
@@ -32,21 +32,24 @@ const Construction = () => {
             transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
             viewport={{ once: true }}
           >
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2 items-center ">
+              
               <motion.span
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
                 viewport={{ once: true }}
-              ></motion.span>
+              >
+                {/* <FaLongArrowAltRight className="text-lg text-sky-300" /> */}
+              </motion.span>
+             
             </div>
           </motion.div>
         </div>
       </div>
-
-      <ConstructionRemoval/>
+      <CommercialGallery/>
     </div>
   );
 };
 
-export default Construction;
+export default CommercialGall;
