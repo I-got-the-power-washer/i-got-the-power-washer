@@ -1,148 +1,211 @@
 "use client";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiHome, FiBriefcase, FiUser, FiPhone, FiMail, FiMapPin, FiMessageSquare, FiClock } from "react-icons/fi";
 
 const RequestEstimateForm = () => {
   const [customerType, setCustomerType] = useState("residential");
 
   return (
-    <section className="bg-white min-h-screen flex items-center justify-center py-12 ">
-      <div className="max-w-3xl w-full p-8 bg-white shadow-lg rounded-lg border-4 border-[#00C6F9]">
+    <section className="min-h-screen flex items-center justify-center py-12 bg-gradient-to-br from-gray-50 to-blue-50">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="max-w-3xl w-full p-8 bg-white rounded-2xl shadow-2xl border border-gray-100"
+      >
         {/* Heading */}
-        <h2 className="mb-6 text-[2.5rem] font-bold text-[#00C6F9] text-center uppercase tracking-[2px] md:text-[2rem]">
-          Request Your Free Estimate
-        </h2>
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-[#00C6F9] to-cyan-600 bg-clip-text text-transparent">
+            Request Your Free Estimate
+          </h2>
+          <p className="text-gray-600 mt-3">Get started with our professional services in 3 easy steps</p>
+        </div>
 
         {/* Customer Type Selection */}
-        <div className="mb-6">
-          <label className="block font-semibold text-gray-700 mb-2">
-            Customer Type *
-          </label>
-          <div className="flex items-center gap-6">
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input
-                type="radio"
-                name="customerType"
-                value="residential"
-                checked={customerType === "residential"}
-                onChange={() => setCustomerType("residential")}
-                className="hidden"
-              />
-              <span
-                className={`w-5 h-5 flex items-center justify-center border-2 rounded-full ${
-                  customerType === "residential"
-                    ? "bg-[#00C6F9] border-[#00C6F9]"
-                    : "border-gray-400"
-                }`}
-              >
-                {customerType === "residential" && (
-                  <span className="w-2.5 h-2.5 bg-white rounded-full"></span>
-                )}
-              </span>
-              <span className="text-gray-800">Residential</span>
-            </label>
-
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input
-                type="radio"
-                name="customerType"
-                value="commercial"
-                checked={customerType === "commercial"}
-                onChange={() => setCustomerType("commercial")}
-                className="hidden"
-              />
-              <span
-                className={`w-5 h-5 flex items-center justify-center border-2 rounded-full ${
-                  customerType === "commercial"
-                    ? "bg-[#00C6F9] border-[#00C6F9]"
-                    : "border-gray-400"
-                }`}
-              >
-                {customerType === "commercial" && (
-                  <span className="w-2.5 h-2.5 bg-white rounded-full"></span>
-                )}
-              </span>
-              <span className="text-gray-800">Commercial</span>
-            </label>
-          </div>
-        </div>
-
-        {/* Common Fields */}
-        <div className="space-y-4">
-          <InputField label="Name *" type="text" required />
-          <InputField label="Phone *" type="text" required />
-          <InputField label="Email *" type="email" required />
-        </div>
-
-        {/* Residential Form Fields */}
-        {customerType === "residential" && (
-          <div className="space-y-4 mt-4">
-            <InputField label="Address *" type="text" required />
-            <InputField label="Suite/Unit" type="text" />
-            <TextareaField label="Message *" required />
-          </div>
-        )}
-
-        {/* Commercial Form Fields */}
-        {customerType === "commercial" && (
-          <div className="space-y-4 mt-4">
-            <InputField label="Business Name *" type="text" required />
-            <InputField label="Company Address *" type="text" required />
-            <SelectField
-              label="Industry Type *"
-              options={["Select Industry", "Construction", "Technology", "Finance", "Other"]}
-              required
+        <div className="mb-8">
+          <label className="block text-lg font-semibold text-gray-700 mb-4">Customer Type *</label>
+          <div className="grid grid-cols-2 gap-4">
+            <CustomerTypeButton
+              value="residential"
+              current={customerType}
+              onChange={setCustomerType}
+              icon={<FiHome />}
+              label="Residential"
+            />
+            <CustomerTypeButton
+              value="commercial"
+              current={customerType}
+              onChange={setCustomerType}
+              icon={<FiBriefcase />}
+              label="Commercial"
             />
           </div>
-        )}
-
-        {/* Common Fields (Both Types) */}
-        <div className="space-y-4 mt-4">
-          <SelectField
-            label="Preferred Time to Contact"
-            options={["Any time", "Morning", "Afternoon", "Evening"]}
-          />
-          <InputField label="How did you hear about us? *" type="text" required />
         </div>
 
-        {/* Submit Button */}
-        <button className="mt-6 w-full bg-[#00C6F9] text-white font-bold py-3 rounded-lg text-lg hover:bg-[#009ec9] transition">
-          Send Request
-        </button>
-      </div>
+        {/* Form Content */}
+        <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <InputField 
+              label="Full Name *" 
+              icon={<FiUser />}
+              type="text" 
+              placeholder="John Doe"
+            />
+            <InputField 
+              label="Phone Number *" 
+              icon={<FiPhone />}
+              type="tel" 
+              placeholder="(555) 123-4567"
+            />
+            <InputField 
+              label="Email Address *" 
+              icon={<FiMail />}
+              type="email" 
+              placeholder="john@example.com"
+            />
+          </div>
+
+          <AnimatePresence mode="wait">
+            {customerType === "residential" ? (
+              <motion.div
+                key="residential"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                className="space-y-6"
+              >
+                <InputField 
+                  label="Address *" 
+                  icon={<FiMapPin />}
+                  type="text" 
+                  placeholder="123 Main St"
+                />
+                <InputField 
+                  label="Suite/Unit" 
+                  type="text" 
+                  placeholder="Apt 4B"
+                />
+                <TextareaField 
+                  label="Message *" 
+                  icon={<FiMessageSquare />}
+                  placeholder="Tell us about your project..."
+                />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="commercial"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                className="space-y-6"
+              >
+                <InputField 
+                  label="Business Name *" 
+                  type="text" 
+                  placeholder="Company Inc."
+                />
+                <InputField 
+                  label="Company Address *" 
+                  icon={<FiMapPin />}
+                  type="text" 
+                  placeholder="456 Business Ave"
+                />
+                <SelectField 
+                  label="Industry Type *" 
+                  icon={<FiBriefcase />}
+                  options={["Technology", "Construction", "Retail", "Healthcare", "Other"]}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <SelectField 
+              label="Preferred Contact Time" 
+              icon={<FiClock />}
+              options={["Any Time", "Morning (8am-12pm)", "Afternoon (12pm-5pm)", "Evening (5pm-8pm)"]}
+            />
+            <InputField 
+              label="How did you hear about us?" 
+              type="text" 
+              placeholder="Referral, Social Media, etc."
+            />
+          </div>
+
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className="w-full bg-gradient-to-r from-[#00C6F9] to-cyan-600 text-white py-4 px-6 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all"
+          >
+            Send Free Estimate Request
+          </motion.button>
+        </div>
+      </motion.div>
     </section>
   );
 };
 
-export default RequestEstimateForm;
+// Custom Components
+const CustomerTypeButton = ({ value, current, onChange, icon, label }) => (
+  <button
+    type="button"
+    onClick={() => onChange(value)}
+    className={`p-4 rounded-xl border-2 transition-all ${
+      current === value
+        ? "border-[#00C6F9] bg-[#00C6F9]/10"
+        : "border-gray-200 hover:border-gray-300"
+    }`}
+  >
+    <div className="flex items-center gap-3">
+      <span className={`text-xl ${current === value ? "text-[#00C6F9]" : "text-gray-500"}`}>
+        {icon}
+      </span>
+      <span className={`font-medium ${current === value ? "text-[#00C6F9]" : "text-gray-700"}`}>
+        {label}
+      </span>
+    </div>
+  </button>
+);
 
-/* ✅ Reusable Input, Textarea, and Select Components */
-const InputField = ({ label, type, required }) => (
-  <div>
-    <label className="block font-medium text-gray-700">{label}</label>
+const InputField = ({ label, icon, type, placeholder, required }) => (
+  <div className="space-y-1">
+    <label className="flex items-center gap-2 text-gray-700 font-medium">
+      {icon && <span className="text-[#00C6F9]">{icon}</span>}
+      {label}
+    </label>
     <input
       type={type}
-      className="w-full border-2 border-gray-300 p-3 rounded-md focus:border-[#00C6F9] focus:outline-none transition"
       required={required}
+      placeholder={placeholder}
+      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#00C6F9] focus:border-transparent transition-all"
     />
   </div>
 );
 
-const TextareaField = ({ label, required }) => (
-  <div>
-    <label className="block font-medium text-gray-700">{label}</label>
+const TextareaField = ({ label, icon, placeholder, required }) => (
+  <div className="space-y-1">
+    <label className="flex items-center gap-2 text-gray-700 font-medium">
+      {icon && <span className="text-[#00C6F9]">{icon}</span>}
+      {label}
+    </label>
     <textarea
-      className="w-full border-2 border-gray-300 p-3 rounded-md focus:border-[#00C6F9] focus:outline-none transition h-24"
       required={required}
-    ></textarea>
+      placeholder={placeholder}
+      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#00C6F9] focus:border-transparent transition-all h-32"
+    />
   </div>
 );
 
-const SelectField = ({ label, options, required }) => (
-  <div>
-    <label className="block font-medium text-gray-700">{label}</label>
+const SelectField = ({ label, icon, options, required }) => (
+  <div className="space-y-1">
+    <label className="flex items-center gap-2 text-gray-700 font-medium">
+      {icon && <span className="text-[#00C6F9]">{icon}</span>}
+      {label}
+    </label>
     <select
-      className="w-full border-2 border-gray-300 p-3 rounded-md focus:border-[#00C6F9] focus:outline-none transition"
       required={required}
+      className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#00C6F9] focus:border-transparent transition-all appearance-none"
     >
       {options.map((option, index) => (
         <option key={index} value={option.toLowerCase()}>
@@ -152,3 +215,5 @@ const SelectField = ({ label, options, required }) => (
     </select>
   </div>
 );
+
+export default RequestEstimateForm;

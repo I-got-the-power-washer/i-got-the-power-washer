@@ -150,17 +150,17 @@ const Navbar = () => {
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="hover:text-[#00C6F9]">
+                      <a href="/reviews" className="hover:text-[#00C6F9]">
                         Our Reviews
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="hover:text-[#00C6F9]">
+                      <a href="/contact-us" className="hover:text-[#00C6F9]">
                         Contact Us
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="hover:text-[#00C6F9]">
+                      <a href="/satisfaction-guarantee-policy" className="hover:text-[#00C6F9]">
                         Satisfaction Guarantee Policy
                       </a>
                     </li>
