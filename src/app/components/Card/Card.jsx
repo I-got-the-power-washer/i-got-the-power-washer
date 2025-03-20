@@ -3,14 +3,15 @@ import React from 'react';
 import styled from 'styled-components';
 import dynamic from "next/dynamic";
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
-import BubblesAnimation from '../../../../public/animations/Bubbles';
+import BubblesAnimation from '../../../../public/animations/house cleaning (2).json';
 // const BubblesAnimation='../../../../public/animations/Bubbles'
-import ManCleaningWindow from '../../../../public/animations/Worker washing windows of the modern building.json'
+import ManCleaningWindow from '../../../../public/animations/residential-window.json'
 import Gutter from "../../../../public/animations/Man doing Gutter Cleaning.json"
 import Professional from "../../../../public/animations/Man doing Power Washing.json"
 import Stain from "../../../../public/animations/stain-cleaning.json" // Adjust path as needed
-import Check from "../../../../public/animations/Flood.json"
+import Check from "../../../../public/animations/House Cleaning.json"
 import waterdrop from '../../../../public/animations/Floor Washing.json'
+import { useLottie } from 'lottie-react';
 
 const ServicesSection = () => {
   const cardsData = [
@@ -49,6 +50,7 @@ const ServicesSection = () => {
       about: "Deck cleaning and sealing services",
       link:"/roof-washing",
       animationData: BubblesAnimation,
+      
     },
     {
       id: 6,
@@ -73,6 +75,7 @@ const ServicesSection = () => {
             about={card.about}
             animationData={card.animationData}
             link={card.link}
+            img={card.img}
           />
         ))}
       </CardsGrid>
@@ -100,13 +103,17 @@ const LottieWrapper = ({ animationData }) => {
   }
 };
 
-const Card = ({ animationData, name, about,link }) => {
+const Card = ({ animationData, name, about,link,img }) => {
   return (
     <StyledWrapper>
       <div className="card">
-        <div className="profile-pic">
-          <LottieWrapper animationData={animationData} />
-        </div>
+      <div className="profile-pic">
+      {useLottie && animationData ? (
+        <LottieWrapper animationData={animationData} />
+      ) : (
+        <img src={img} alt="Profile" />
+      )}
+    </div>
         <div className="bottom">
           <div className="content">
             <span className="name">{name}</span>

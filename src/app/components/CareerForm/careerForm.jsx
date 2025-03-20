@@ -1,19 +1,98 @@
 "use client";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { FiUser, FiMail, FiPhone, FiFileText, FiArrowRight } from "react-icons/fi";
+import { FiUser, FiMail, FiPhone, FiFileText, FiAlertCircle, FiArrowRight } from "react-icons/fi";
 import { motion } from "framer-motion";
+import emailjs from '@emailjs/browser';
+import { toast } from "react-toastify";
 
 const CareerForm = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
+    watch,
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log("Form Data Submitted:", data);
-    alert("Application Submitted Successfully!");
+  const [loading, setLoading] = React.useState(false);
+  const fileInput = watch("resume");
+
+  const uploadToCloudinary = async (file) => {
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET);
+    
+    try {
+      const response = await fetch(
+        `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/upload`,
+        {
+          method: 'POST',
+          body: formData,
+        }
+      );
+
+      if (!response.ok) throw new Error('Upload failed');
+      
+      const data = await response.json();
+      return data.secure_url;
+    } catch (error) {
+      console.error('Cloudinary error:', error);
+      throw new Error('File upload failed. Please try again.');
+    }
+  };
+
+  const onSubmit = async (data) => {
+    setLoading(true);
+    try {
+      const file = data.resume?.[0];
+      if (!file) throw new Error("Resume is required");
+
+      // Validate file
+      if (file.size > 5 * 1024 * 1024) {
+        throw new Error("File size exceeds 5MB limit");
+      }
+      
+      const validTypes = [
+        'application/pdf',
+        'application/msword',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+      ];
+      
+      if (!validTypes.includes(file.type)) {
+        throw new Error("Only PDF and Word documents are allowed");
+      }
+
+      // Upload to Cloudinary
+      const fileUrl = await uploadToCloudinary(file);
+
+      // Prepare email data
+      const templateParams = {
+        first_name: data.firstName,
+        last_name: data.lastName,
+        email: data.email,
+        phone: data.phone,
+        cover_letter: data.message || "No cover letter provided",
+        resume_link: fileUrl,
+        filename: file.name
+      };
+
+      // Send email
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_CAREER_TEMPLATE_ID,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      );
+
+      toast.success("Application submitted successfully!");
+      reset();
+    } catch (error) {
+      console.error("Submission error:", error);
+      toast.error(error.message || "Failed to submit application");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -83,7 +162,13 @@ const CareerForm = () => {
             </label>
             <input
               type="email"
-              {...register("email", { required: "Email is required" })}
+              {...register("email", { 
+                required: "Email is required",
+                pattern: {
+                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                  message: "Invalid email address"
+                }
+              })}
               className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#00C6F9] focus:border-transparent transition-all"
               placeholder="john@example.com"
             />
@@ -101,7 +186,13 @@ const CareerForm = () => {
             </label>
             <input
               type="tel"
-              {...register("phone", { required: "Phone Number is required" })}
+              {...register("phone", { 
+                required: "Phone Number is required",
+                pattern: {
+                  value: /^\+?[1-9]\d{1,14}$/,
+                  message: "Invalid phone number"
+                }
+              })}
               className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#00C6F9] focus:border-transparent transition-all"
               placeholder="(555) 123-4567"
             />
@@ -131,21 +222,43 @@ const CareerForm = () => {
         <div className="space-y-2">
           <label className="block text-gray-700 font-medium flex items-center gap-1">
             <FiFileText className="text-[#00C6F9]" />
-            Upload Resume (PDF/DOC)
+            Upload Resume (PDF/DOC) <span className="text-red-500">*</span>
           </label>
           <div className="relative border-2 border-dashed border-gray-200 rounded-xl p-6 text-center hover:border-[#00C6F9] transition-colors">
             <input
               type="file"
-              {...register("resume")}
+              {...register("resume", { 
+                required: "Resume is required",
+                validate: {
+                  fileSize: (files) => 
+                    files?.[0]?.size <= 5 * 1024 * 1024 || "Max file size is 5MB",
+                  fileType: (files) => 
+                    ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'].includes(files?.[0]?.type) || 
+                    "Only PDF and DOC files are allowed"
+                }
+              })}
               className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
               accept=".pdf,.doc,.docx"
             />
             <p className="text-gray-500">
-              Drag & drop files here or{" "}
-              <span className="text-[#00C6F9] font-medium">browse</span>
+              {fileInput?.[0]?.name || "Drag & drop files here or"}
+              {!fileInput?.[0]?.name && (
+                <>
+                  {" "}<span className="text-[#00C6F9] font-medium">browse</span>
+                </>
+              )}
             </p>
-            <p className="text-sm text-gray-400 mt-1">Max file size: 5MB</p>
+            <p className="text-sm text-gray-400 mt-1">
+              {fileInput?.[0]?.name 
+                ? `${(fileInput[0].size / 1024 / 1024).toFixed(2)}MB` 
+                : "Max file size: 5MB"}
+            </p>
           </div>
+          {errors.resume && (
+            <p className="text-red-500 text-sm flex items-center gap-1 mt-1">
+              <FiAlertCircle className="inline" /> {errors.resume.message}
+            </p>
+          )}
         </div>
 
         {/* Submit Button */}
@@ -153,10 +266,11 @@ const CareerForm = () => {
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
           type="submit"
-          className="w-full bg-gradient-to-r from-[#00C6F9] to-cyan-600 text-white py-4 px-6 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
+          disabled={loading}
+          className="w-full bg-gradient-to-r from-[#00C6F9] to-cyan-600 text-white py-4 px-6 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 disabled:opacity-70"
         >
-          Submit Application
-          <FiArrowRight className="w-5 h-5" />
+          {loading ? "Submitting..." : "Submit Application"}
+          {!loading && <FiArrowRight className="w-5 h-5" />}
         </motion.button>
       </form>
     </motion.div>

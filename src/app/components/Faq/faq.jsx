@@ -1,4 +1,3 @@
-// components/FAQ.jsx
 "use client";
 import { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
@@ -8,6 +7,7 @@ const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
+  // FAQ items array remains the same 
   const faqItems = [
     {
       question: "Is pressure washing safe for all surfaces?",
@@ -51,69 +51,90 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white py-16 px-4 sm:px-6 lg:px-8 relative">
-         <div className="absolute inset-0 z-0 opacity-50 overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-sky-50 to-white py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <div className="absolute inset-0 z-0 opacity-10">
         <Lottie
           // animationData={Bubble}
           loop={true}
-          style={{ 
-            width: '100%',
-            height: '100%',
-            // transform: 'scale(2)' // Scale up the animation
-          }}
+          className="w-full h-full"
           rendererSettings={{
-            preserveAspectRatio: 'xMidYMid slice' // Cover entire area
+            preserveAspectRatio: 'xMidYMid slice'
           }}
-          // className="hidden md:block" // Only show on desktop
         />
-        {/* Mobile version remains unscaled */}
-        {/* <Lottie
-          animationData={Bubble}
-          loop={true}
-          style={{ width: '100%', height: '100%' }}
-          className="md:hidden" // Only show on mobile
-        /> */}
       </div>
-      <div className="max-w-3xl mx-auto relative z-10">
-        <h2 className="text-3xl font-bold text-[#00C6F9] mb-8 text-center">
-          Frequently Asked Questions
-        </h2>
 
-        <div className="space-y-4">
+      <div className="max-w-5xl mx-auto relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#00C6F9] to-[#0066FF] bg-clip-text text-transparent mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Find answers to common questions about our pressure washing services
+          </p>
+        </div>
+
+        <div className="space-y-6">
           {faqItems.map((item, index) => (
-            <div
+            <div 
               key={index}
-              className={`transition-all duration-300 border-b border-sky-800 ${
-                activeIndex === index ? "border-b-0" : ""
-              }`}
+              className="group transition-all duration-300 ease-out"
             >
               <button
-                className="flex justify-between items-center w-full p-4 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 bg-[#00C6F9]"
-                onClick={() =>
-                  setActiveIndex(activeIndex === index ? null : index)
-                }
+                className={`flex justify-between items-center w-full p-6 text-left rounded-xl shadow-sm transition-all duration-300 ${
+                  activeIndex === index 
+                    ? 'bg-white shadow-lg ring-2 ring-[#00C6F9]'
+                    : 'bg-white hover:bg-gray-50 hover:shadow-md'
+                }`}
+                onClick={() => setActiveIndex(activeIndex === index ? null : index)}
+                aria-expanded={activeIndex === index}
+                aria-controls={`faq-content-${index}`}
               >
-                <span className="text-lg font-medium text-white hover:text-[#00C6F9] transition-colors">
+                <span className={`text-lg md:text-xl font-semibold pr-4 ${
+                  activeIndex === index ? 'text-[#00c6f9]' : 'text-gray-800'
+                }`}>
                   {item.question}
                 </span>
-                {activeIndex === index ? (
-                  <FaMinus className="h-6 w-6 text-white" />
-                ) : (
-                  <FaPlus className="h-6 w-6 text-white" />
-                )}
+                <div className={`flex-shrink-0 p-2 rounded-full transition-colors ${
+                  activeIndex === index 
+                    ? 'bg-[#00C6F9] text-white'
+                    : 'bg-gray-100 text-gray-600 group-hover:bg-gray-200'
+                }`}>
+                  {activeIndex === index ? (
+                    <FaMinus className="h-5 w-5" />
+                  ) : (
+                    <FaPlus className="h-5 w-5" />
+                  )}
+                </div>
               </button>
 
               <div
-                className={`overflow-hidden transition-all duration-300 ${
+                id={`faq-content-${index}`}
+                className={`prose prose-lg overflow-hidden transition-all duration-500 ease-in-out ${
                   activeIndex === index
-                    ? "max-h-96 opacity-100 pb-4 px-4 mt-2"
-                    : "max-h-0 opacity-0"
+                    ? 'max-h-96 opacity-100 mt-4'
+                    : 'max-h-0 opacity-0'
                 }`}
               >
-                <p className="text-black">{item.answer}</p>
+                <div className="p-6 bg-white/90 backdrop-blur-sm rounded-lg border-l-4 border-[#00C6F9] shadow-sm">
+                  <p className="text-gray-600 leading-relaxed">
+                    {item.answer}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-16 text-center">
+          <p className="text-gray-600">
+            Still have questions?{' '}
+            <a 
+              href="/contact-us"
+              className="text-[#00C6F9] font-semibold hover:text-[#0066FF] transition-colors"
+            >
+              Contact us directly
+            </a>
+          </p>
         </div>
       </div>
     </div>

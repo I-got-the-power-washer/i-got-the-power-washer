@@ -7,10 +7,11 @@ import BubblesAnimation from '../../../../public/animations/Bubbles';
 // const BubblesAnimation='../../../../public/animations/Bubbles'
 import ManCleaningWindow from '../../../../public/animations/Worker washing windows of the modern building.json'
 import Gutter from "../../../../public/animations/Man doing Gutter Cleaning.json"
-import Professional from "../../../../public/animations/Man doing Power Washing.json"
+import Professional from "../../../../public/animations/Boy Window Cleaning.json"
 import Stain from "../../../../public/animations/Boy cleaning floor.json" // Adjust path as needed
 import Check from "../../../../public/animations/Flood.json"
 import waterdrop from '../../../../public/animations/Floor Washing.json'
+import { useLottie } from 'lottie-react';
 
 const CommercialServicesSection = () => {
   const cardsData = [
@@ -19,14 +20,15 @@ const CommercialServicesSection = () => {
       name: "Building Wash",
       about: "Professional exterior cleaning for homes and driveways",
       link:"building-wash",
-      animationData: Professional,
+      animationData: ManCleaningWindow,
+      
     },
     {
       id: 2,
       name: "Window Cleaning",
       about: "Safe and effective roof stain removal services",
       link:"window-cleaning",
-      animationData: Check,
+      animationData:Professional ,
     },
     {
       id: 3,
@@ -72,6 +74,7 @@ const CommercialServicesSection = () => {
             about={card.about}
             animationData={card.animationData}
             link={card.link}
+            img={card.img}
           />
         ))}
       </CardsGrid>
@@ -81,7 +84,7 @@ const CommercialServicesSection = () => {
 
 const LottieWrapper = ({ animationData }) => {
   if (!animationData) {
-    return <div className="lottie-error">Animation unavailable</div>;
+    return null; // Do not render anything if animationData is not available
   }
 
   try {
@@ -94,18 +97,23 @@ const LottieWrapper = ({ animationData }) => {
       />
     );
   } catch (error) {
-    console.error('Lottie animation error:', error);
+    console.error("Lottie animation error:", error);
     return <div className="lottie-error">Error loading animation</div>;
   }
 };
 
-const Card = ({ animationData, name, about,link }) => {
+
+const Card = ({ animationData, name, about,link,img }) => {
   return (
     <StyledWrapper>
       <div className="card">
-        <div className="profile-pic">
-          <LottieWrapper animationData={animationData} />
-        </div>
+      <div className="profile-pic">
+      {useLottie && animationData ? (
+        <LottieWrapper animationData={animationData} />
+      ) : (
+        <img src={img} alt="Profile" />
+      )}
+    </div>
         <div className="bottom">
           <div className="content">
             <span className="name">{name}</span>

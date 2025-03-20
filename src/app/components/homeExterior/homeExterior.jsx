@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { FaPhoneAlt } from "react-icons/fa"; // Importing phone icon
+import { FaPhoneAlt } from "react-icons/fa";
 import Link from "next/link";
 
 const HomeExterior = () => {
@@ -14,80 +14,91 @@ const HomeExterior = () => {
   }, [controls, textControls]);
 
   const imageVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.5, staggerChildren: 0.2 },
+      transition: { duration: 0.6, ease: "easeOut" }
     },
   };
 
   const textVariants = {
-    hidden: { opacity: 0, x: -50 },
+    hidden: { opacity: 0, x: -40 },
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.5, staggerChildren: 0.2 },
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.2 }
     },
   };
 
   return (
-    <div className="bg-white min-h-[70vh] flex items-center justify-center py-12">
-      <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] max-w-5xl w-full">
-        {/* Left Side (Image) */}
+    <div className="bg-gradient-to-b from-white to-blue-50 min-h-[80vh] flex items-center justify-center py-16 px-4">
+      <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr] max-w-6xl w-full gap-8">
+        {/* Image Section */}
         <motion.div
           initial="hidden"
           animate={controls}
           variants={imageVariants}
-          className="p-6 flex items-center justify-center"
+          className="flex items-center justify-center p-6"
         >
-          <motion.img
-            src="/images/WhatsApp-Image-2023-09-06-at-18.42.05.jpg"
-            alt="Junk Removal Florida"
-            className="w-full h-full object-cover border-4 rounded-lg"
-            style={{ borderColor: "#00C6F9" }} // Blue border
-            variants={imageVariants}
-          />
+          <div className="relative group">
+            <motion.img
+              src="/images/WhatsApp-Image-2023-09-06-at-18.42.05.jpg"
+              alt="Professional Pressure Washing"
+              className="w-full h-[500px] object-cover rounded-xl shadow-2xl border-8 border-white transform transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 border-2 border-blue-100/50 rounded-xl shadow-inner" />
+          </div>
         </motion.div>
 
-        {/* Right Side (Text Content) */}
+        {/* Content Section */}
         <motion.div
           initial="hidden"
           animate={textControls}
           variants={textVariants}
-          className="p-10 flex flex-col justify-start text-black"
+          className="flex flex-col justify-center p-6 space-y-6"
         >
-          <motion.span
-            className="inline-block text-2xl uppercase border-b-4 mb-6 text-[#00C6F9]"
-            style={{ width: "fit-content", borderColor: "#00C6F9" }}
+          <motion.h2
+            className="text-3xl font-bold tracking-tight text-gray-900"
             variants={textVariants}
           >
-            Need Of Pressure Washing near Cincinnati?
-          </motion.span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">
+              Premium Pressure Washing
+            </span>
+            <br />
+            <span className="mt-2 inline-block text-2xl text-gray-600">
+              Serving Cincinnati & Surrounding Areas
+            </span>
+          </motion.h2>
 
-      
-
-          <motion.p
-            className="mt-4 text-lg opacity-90 text-justify"
-            variants={textVariants}
-          >
-            IGotThePowerWasher has the power to clean up your dirty exterior. Our licensed and insured power washing company is the one to trust for top-of-the-line work. We specialize in pressure washing services for both homes and businesses in Cincinnati, OH and the surrounding area. You’ll feel confident knowing that we’ll complete your job right the first time.
-          </motion.p>
-          <motion.p
-            className="mt-4 text-lg opacity-90 text-justify"
-            variants={textVariants}
-          >
-           We’ve proudly transformed thousands of properties and can’t wait to make yours the next success story! Don’t just take our word for it-read our amazing reviews here!
-          </motion.p>
-
-          <motion.div>
-            <motion.button
-              className="inline-flex w-auto rounded-xl mt-6 px-6 py-3 text-black font-semibold uppercase items-center bg-[#00C6F9] hover:bg-white hover:text-[#00C6F9] transition"
+          <div className="space-y-5">
+            <motion.p
+              className="text-lg text-gray-600 leading-relaxed"
               variants={textVariants}
             >
-              <FaPhoneAlt className="mr-2" />
-              <Link href="tel:+15135700355">(513) 570-0355</Link>
-            </motion.button>
+              <strong className="font-semibold text-blue-600">IGotThePowerWasher</strong> delivers professional exterior cleaning services for both residential and commercial properties. As a fully licensed and insured company, we guarantee top-quality results with every project.
+            </motion.p>
+
+            <motion.p
+              className="text-lg text-gray-600 leading-relaxed"
+              variants={textVariants}
+            >
+              With thousands of successfully transformed properties, we're committed to making your space our next success story. Explore our verified customer reviews to see why Cincinnati trusts us for their pressure washing needs.
+            </motion.p>
+          </div>
+
+          <motion.div
+            variants={textVariants}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <Link
+              href="tel:+1513570-0355"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-xl font-semibold uppercase tracking-wide transition-all hover:shadow-lg hover:shadow-blue-200"
+            >
+              <FaPhoneAlt className="text-xl" />
+              <span>(513) 570-0355</span>
+            </Link>
           </motion.div>
         </motion.div>
       </div>
