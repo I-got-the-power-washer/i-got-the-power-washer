@@ -25,7 +25,7 @@ const CareerPage = () => {
         </div>
       </div>
 
-      <CareerForm />
+      {/* <CareerForm /> */}
     </div>
   );
 };
