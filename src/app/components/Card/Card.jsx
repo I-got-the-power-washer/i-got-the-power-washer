@@ -11,12 +11,12 @@ const Lottie = dynamic(() => import("lottie-react"), {
 });
 
 // Import animations
-import BubblesAnimation from '../../../../public/animations/house cleaning (2).json';
+import BubblesAnimation from '../../../../public/animations/Roof washing.json';
 import ManCleaningWindow from '../../../../public/animations/residential-window.json';
 import Gutter from "../../../../public/animations/Man doing Gutter Cleaning.json";
-import Professional from "../../../../public/animations/Droplit.json";
+import Professional from "../../../../public/animations/Professional Cleaner.json";
 import Stain from "../../../../public/animations/stain-cleaning.json";
-import Check from "../../../../public/animations/House Cleaning.json";
+import Check from "../../../../public/animations/House wash.json";
 import waterdrop from '../../../../public/animations/Floor Washing.json';
 
 const ServicesSection = () => {

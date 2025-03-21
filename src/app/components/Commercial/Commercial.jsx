@@ -16,9 +16,11 @@ import BubblesAnimation from '../../../../public/animations/Bubbles';
 import ManCleaningWindow from '../../../../public/animations/Worker washing windows of the modern building.json'
 import Gutter from "../../../../public/animations/Man doing Gutter Cleaning.json"
 import Professional from "../../../../public/animations/Boy Window Cleaning.json"
-import Stain from "../../../../public/animations/Boy cleaning floor.json" // Adjust path as needed
+import Stain from "../../../../public/animations/Stain remover.json" // Adjust path as needed
 import Check from "../../../../public/animations/Flood.json"
 import waterdrop from '../../../../public/animations/Floor Washing.json'
+import Parking from "../../../../public/animations/Parking lot.json"
+import building from "../../../../public/animations/Building wash.json"
 
 const CommercialServicesSection = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -33,7 +35,7 @@ const CommercialServicesSection = () => {
       name: "Building Wash",
       about: "Professional exterior cleaning for homes and driveways",
       link:"building-wash",
-      animationData: ManCleaningWindow,
+      animationData: building,
       
     },
     {
@@ -55,7 +57,7 @@ const CommercialServicesSection = () => {
       name: "Parking Maintenance",
       about: "Streak-free window cleaning services",
       link:"/parking-lot-maintenance",
-      animationData:  ManCleaningWindow,
+      animationData:  Parking,
     },
     {
       id: 5,
