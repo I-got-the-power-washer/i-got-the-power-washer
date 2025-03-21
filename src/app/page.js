@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 
 import ServicesSection from "./components/Card/Card";
 import ClientLogos from "./components/Logos/logos";

@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { FiHome, FiBriefcase, FiClock, FiMail, FiPhone, FiMapPin, FiFacebook, FiTwitter, FiInstagram, FiLinkedin } from 'react-icons/fi';
+
+import {  FiMail, FiPhone, FiMapPin, FiFacebook, FiTwitter, FiInstagram,} from 'react-icons/fi';
 import RequestEstimateForm from '../homeForm/RequestEstimateForm';
 import { FaTiktok } from 'react-icons/fa';
 

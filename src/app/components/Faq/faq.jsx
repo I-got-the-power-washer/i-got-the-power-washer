@@ -1,8 +1,7 @@
 "use client";
 import { useState } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
-import dynamic from "next/dynamic";
-const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -52,7 +51,7 @@ const FAQ = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-50 to-white py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <div className="absolute inset-0 z-0 opacity-10">
+      {/* <div className="absolute inset-0 z-0 opacity-10">
         <Lottie
           // animationData={Bubble}
           loop={true}
@@ -61,7 +60,7 @@ const FAQ = () => {
             preserveAspectRatio: 'xMidYMid slice'
           }}
         />
-      </div>
+      </div> */}
 
       <div className="max-w-5xl mx-auto relative z-10">
         <div className="text-center mb-16">
