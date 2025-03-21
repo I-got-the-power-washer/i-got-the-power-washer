@@ -1,19 +1,21 @@
 "use client";
-import React, { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { FaPhoneAlt } from "react-icons/fa";
 import Link from "next/link";
 
 const HomeExterior = () => {
+  const [isMounted, setIsMounted] = useState(false);
   const controls = useAnimation();
   const textControls = useAnimation();
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    setIsMounted(true);
+    if (isMounted) {
       controls.start("visible");
       textControls.start("visible");
     }
-  }, [controls, textControls]);
+  }, [controls, textControls, isMounted]);
 
   const imageVariants = {
     hidden: { opacity: 0, y: 40 },
@@ -33,13 +35,15 @@ const HomeExterior = () => {
     },
   };
 
+  if (!isMounted) return null;
+
   return (
     <div className="bg-gradient-to-b from-white to-blue-50 min-h-[80vh] flex items-center justify-center py-16 px-4">
       <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr] max-w-6xl w-full gap-8">
         {/* Image Section */}
         <motion.div
-          initial={false}
-          animate={controls}
+          initial="hidden"
+          animate={isMounted ? "visible" : "hidden"}
           variants={imageVariants}
           className="flex items-center justify-center p-6"
         >
@@ -48,6 +52,8 @@ const HomeExterior = () => {
               src="/images/WhatsApp-Image-2023-09-06-at-18.42.05.jpg"
               alt="Professional Pressure Washing"
               className="w-full h-[500px] object-cover rounded-xl shadow-2xl border-8 border-white transform transition-transform duration-500 group-hover:scale-105"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
             />
             <div className="absolute inset-0 border-2 border-blue-100/50 rounded-xl shadow-inner" />
           </div>
@@ -55,8 +61,8 @@ const HomeExterior = () => {
 
         {/* Content Section */}
         <motion.div
-          initial={false}
-          animate={textControls}
+          initial="hidden"
+          animate={isMounted ? "visible" : "hidden"}
           variants={textVariants}
           className="flex flex-col justify-center p-6 space-y-6"
         >

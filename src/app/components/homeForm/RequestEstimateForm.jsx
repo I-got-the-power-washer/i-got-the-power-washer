@@ -1,14 +1,14 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiHome, FiBriefcase, FiUser, FiPhone, FiMail, FiMapPin, FiMessageSquare, FiClock } from "react-icons/fi";
 import { useForm } from "react-hook-form";
-import useEmail from "@/hooks/useEmail";
 import { toast } from "react-toastify";
 
 const RequestEstimateForm = () => {
   const [customerType, setCustomerType] = useState("residential");
-  const { sendEmail, loading } = useEmail();
+  const [isMounted, setIsMounted] = useState(false);
+  const [loading, setLoading] = useState(false);
   
   const {
     register,
@@ -17,13 +17,29 @@ const RequestEstimateForm = () => {
     reset,
   } = useForm();
 
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const sendEmail = async (templateParams, templateId) => {
+    const emailjs = await import('@emailjs/browser').then(mod => mod.default);
+    
+    return emailjs.send(
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+      templateId,
+      templateParams,
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+    );
+  };
+
   const onSubmit = async (data) => {
+    if (!isMounted) return;
+    
+    setLoading(true);
     try {
       const isCommercial = customerType === "commercial";
       
-      // Prepare all template parameters with fallbacks
       const templateParams = {
-        // Common fields
         customer_name: data.fullName || "Not provided",
         customer_email: data.email || "Not provided",
         phone_number: data.phoneNumber || "Not provided",
@@ -31,25 +47,17 @@ const RequestEstimateForm = () => {
         message: data.message || "No message provided",
         contact_time: data.contactTime || "Not specified",
         reference: data.reference || "Not specified",
-
-        // Address fields
         address_label: isCommercial ? "Business Address" : "Residential Address",
         address_value: isCommercial 
           ? data.companyAddress || "Not provided" 
           : data.address || "Not provided",
-
-        // Business-specific
         business_name: isCommercial 
           ? data.businessName || "Not provided" 
           : "N/A",
-
-        // Suite/Unit
         suite_unit: !isCommercial 
           ? data.suite || "None"
           : "N/A"
       };
-
-      console.log("Submission Data:", templateParams);
 
       await sendEmail(
         templateParams,
@@ -60,9 +68,13 @@ const RequestEstimateForm = () => {
       toast.success("Estimate request sent successfully!");
     } catch (error) {
       console.error("Submission Error:", error);
-      toast.error("Failed to send estimate. Please try again.");
+      toast.error(error.message || "Failed to send estimate. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
+
+  if (!isMounted) return null;
 
   return (
     <section className="min-h-screen flex items-center justify-center py-12 bg-gradient-to-br from-gray-50 to-blue-50">

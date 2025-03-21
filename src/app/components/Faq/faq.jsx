@@ -1,12 +1,15 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaPlus, FaMinus } from "react-icons/fa";
-
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [isMounted, setIsMounted] = useState(false);
 
-  // FAQ items array remains the same 
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const faqItems = [
     {
       question: "Is pressure washing safe for all surfaces?",
@@ -49,19 +52,10 @@ const FAQ = () => {
     },
   ];
 
+  if (!isMounted) return null;
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-50 to-white py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* <div className="absolute inset-0 z-0 opacity-10">
-        <Lottie
-          // animationData={Bubble}
-          loop={true}
-          className="w-full h-full"
-          rendererSettings={{
-            preserveAspectRatio: 'xMidYMid slice'
-          }}
-        />
-      </div> */}
-
       <div className="max-w-5xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-[#00C6F9] to-[#0066FF] bg-clip-text text-transparent mb-4">
@@ -99,18 +93,20 @@ const FAQ = () => {
                     : 'bg-gray-100 text-gray-600 group-hover:bg-gray-200'
                 }`}>
                   {activeIndex === index ? (
-                    <FaMinus className="h-5 w-5" />
+                    <FaMinus className="h-5 w-5" aria-hidden="true" />
                   ) : (
-                    <FaPlus className="h-5 w-5" />
+                    <FaPlus className="h-5 w-5" aria-hidden="true" />
                   )}
                 </div>
               </button>
 
               <div
                 id={`faq-content-${index}`}
-                className={`prose prose-lg overflow-hidden transition-all duration-500 ease-in-out ${
+                role="region"
+                aria-hidden={activeIndex !== index}
+                className={`overflow-hidden transition-all duration-500 ease-in-out ${
                   activeIndex === index
-                    ? 'max-h-96 opacity-100 mt-4'
+                    ? 'max-h-[1000px] opacity-100 mt-4'
                     : 'max-h-0 opacity-0'
                 }`}
               >
