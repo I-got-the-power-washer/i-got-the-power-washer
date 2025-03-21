@@ -7,7 +7,7 @@ import BubblesAnimation from '../../../../public/animations/house cleaning (2).j
 // const BubblesAnimation='../../../../public/animations/Bubbles'
 import ManCleaningWindow from '../../../../public/animations/residential-window.json'
 import Gutter from "../../../../public/animations/Man doing Gutter Cleaning.json"
-import Professional from "../../../../public/animations/Man doing Power Washing.json"
+import Professional from "../../../../public/animations/Droplit.json"
 import Stain from "../../../../public/animations/stain-cleaning.json" // Adjust path as needed
 import Check from "../../../../public/animations/House Cleaning.json"
 import waterdrop from '../../../../public/animations/Floor Washing.json'
