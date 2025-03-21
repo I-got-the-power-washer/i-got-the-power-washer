@@ -17,11 +17,11 @@ export default function Home() {
      <ServicesSection/>
      <CommercialServicesSection/>
      <ClientLogos/>
-   
-     <RequestEstimateForm/>
+{/*    
+     <RequestEstimateForm/> */}
      <HomeExterior/>
    <Review/>
-     {/* <FAQ/> */}
+     <FAQ/>
      
     
     </div>
