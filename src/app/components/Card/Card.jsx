@@ -4,7 +4,6 @@ import dynamic from "next/dynamic";
 import styled from 'styled-components';
 import Link from 'next/link';
 
-// Dynamically import Lottie with SSR disabled
 const Lottie = dynamic(() => import("lottie-react"), { 
   ssr: false,
   loading: () => <div className="lottie-loading">Loading...</div>
@@ -76,12 +75,23 @@ const ServicesSection = () => {
   return (
     <SectionContainer>
       <HeaderWrapper>
-        <SectionHeading>Our Residential Services</SectionHeading>
-        <Lottie 
-          animationData={waterdrop} 
-          style={{ width: 100, height: 100, marginTop: "-50px" }} 
-        />
+        <HeadingContainer>
+          <AnimatedHeading>
+            Our Residential Services
+          </AnimatedHeading>
+          <WaterdropAnimation>
+            <Lottie 
+              animationData={waterdrop} 
+              rendererSettings={{ 
+                preserveAspectRatio: 'xMidYMid meet',
+                transparent: true
+              }}
+              style={{ width: '100%', height: '100%' }}
+            />
+          </WaterdropAnimation>
+        </HeadingContainer>
       </HeaderWrapper>
+      
       <CardsGrid>
         {cardsData.map(card => (
           <Card
@@ -104,14 +114,20 @@ const LottieWrapper = ({ animationData }) => {
     setIsLoaded(true);
   }, []);
 
-  if (!isLoaded) return <div className="lottie-loading">Loading...</div>;
-
   return (
     <Lottie
       animationData={animationData}
       loop
       autoplay
-      className="lottie-animation"
+      rendererSettings={{
+        preserveAspectRatio: 'xMidYMid meet',
+        transparent: true
+      }}
+      style={{ 
+        width: '100%', 
+        height: '100%',
+        overflow: 'visible'
+      }}
     />
   );
 };
@@ -127,24 +143,17 @@ const Card = ({ animationData, name, about, link }) => {
 
   return (
     <StyledWrapper>
-      <div className="card">
-        <div className="profile-pic">
-          {animationData && <LottieWrapper animationData={animationData} />}
+      <div className="card mb-10">
+        <div className="animation-container">
+          <LottieWrapper animationData={animationData} />
         </div>
 
-        <div className="bottom">
-          <div className="content">
-            <span className="name">{name}</span>
-            <span className="about-me">{about}</span>
-          </div>
-          <div className="bottom-bottom">
-            <div className="service-name-container">
-              <span className="service-name">{name}</span>
-            </div>
-            <Link href={link || "#"} className="button">
-              Learn More
-            </Link>
-          </div>
+        <div className="content-wrapper">
+          <h3 className="service-title">{name}</h3>
+          <p className="service-description">{about}</p>
+          <Link href={link || "#"} className="learn-more-btn">
+            Learn More
+          </Link>
         </div>
       </div>
     </StyledWrapper>
@@ -159,210 +168,151 @@ const SectionContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  overflow: visible;
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
 `;
 
 const HeaderWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1px;
+  width: 100%;
+  max-width: 1200px;
   margin-bottom: 3rem;
+  padding: 0 1rem;
+
+  @media (max-width: 768px) {
+    margin-bottom: 2rem;
+  }
 `;
 
-const SectionHeading = styled.h1`
-  color: #00C6F9;
-  font-size: 2.5rem;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  
+const HeadingContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+
   @media (max-width: 768px) {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+`;
+
+const AnimatedHeading = styled.h2`
+  font-size: 2.8rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #00C6F9, #0062FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  white-space: nowrap;
+
+  @media (max-width: 1024px) {
+    font-size: 2.2rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    white-space: normal;
+    text-align: center;
+  }
+`;
+
+const WaterdropAnimation = styled.div`
+  width: 120px;
+  height: 120px;
+  position: relative;
+
+  @media (max-width: 768px) {
+    width: 80px;
+    height: 80px;
   }
 `;
 
 const CardsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
-  
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  padding: 0 1rem;
 
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    max-width: 500px;
   }
 `;
 
 const StyledWrapper = styled.div`
   .card {
-    width: 320px;
-    height: 320px;
     background: white;
-    border-radius: 32px;
-    padding: 3px;
-    position: relative;
-    box-shadow: rgba(96, 75, 74, 0.188) 0px 70px 30px -50px;
-    transition: all 0.5s ease-in-out;
-    margin: 0 auto;
-
-    @media (max-width: 768px) {
-      width: 280px;
-      height: 280px;
-    }
-  }
-
-  .profile-pic {
-    position: absolute;
-    width: calc(100% - 6px);
-    height: calc(100% - 6px);
-    top: 3px;
-    left: 3px;
-    border-radius: 29px;
-    z-index: 1;
-    border: 0px solid #00C6F9;
-    overflow: hidden;
-    transition: all 0.5s ease-in-out 0.2s, z-index 0.5s ease-in-out 0.2s;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .lottie-animation {
-    width: 100%;
-    height: 100%;
-    transform: scale(1.2);
-  }
-
-  .lottie-loading {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #00C6F9;
-    font-size: 0.8rem;
-  }
-
-  .bottom {
-    position: absolute;
-    bottom: 3px;
-    left: 3px;
-    right: 3px;
-    background: #00C6F9;
-    top: 80%;
-    border-radius: 29px;
-    z-index: 2;
-    box-shadow: rgba(96, 75, 74, 0.188) 0px 5px 5px 0px inset;
-    overflow: hidden;
-    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-  }
-
-  .content {
-    position: absolute;
-    bottom: 0;
-    left: 1.5rem;
-    right: 1.5rem;
-    height: 160px;
-  }
-
-  .name {
-    display: block;
-    font-size: 1.4rem;
-    color: white;
-    font-weight: bold;
-  }
-
-  .about-me {
-    display: block;
-    font-size: 1rem;
-    color: white;
-    margin-top: 1rem;
-  }
-
-  .bottom-bottom {
-    position: absolute;
-    bottom: 1rem;
-    left: 1.5rem;
-    right: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .service-name-container {
-    background: white;
-    padding: 8px 15px;
     border-radius: 20px;
-    flex-grow: 1;
-    margin-right: 1rem;
-  }
-
-  .service-name {
-    color: #00C6F9;
-    font-weight: bold;
-    font-size: 0.9rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .button {
-    background: white;
-    color: #00C6F9;
-    border: none;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    padding: 0.5rem 1rem;
-    box-shadow: rgba(96, 75, 74, 0.133) 0px 5px 5px 0px;
+    box-shadow: 0 10px 30px rgba(0, 198, 249, 0.1);
     transition: all 0.3s ease;
-    cursor: pointer;
-    white-space: nowrap;
-    text-decoration: none;
-    display: inline-block;
+    overflow: visible;
+    position: relative;
+    height: 400px;
 
     &:hover {
-      background: #00A3CC;
-      color: white;
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 198, 249, 0.2);
     }
   }
 
-  .card:hover {
-    border-top-left-radius: 55px;
+  .animation-container {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    overflow: visible;
+    border-radius: 20px 20px 0 0;
+    background: #f8f9fa;
   }
 
-  .card:hover .bottom {
-    top: 25%;
-    border-radius: 80px 29px 29px 29px;
-    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+  .content-wrapper {
+    padding: 1.5rem;
+    text-align: center;
   }
 
-  .card:hover .profile-pic {
-    width: 120px;
-    height: 120px;
-    aspect-ratio: 1;
-    top: 15px;
-    left: 15px;
-    border-radius: 50%;
-    z-index: 3;
-    border: 7px solid #00C6F9;
-    box-shadow: rgba(96, 75, 74, 0.188) 0px 5px 5px 0px;
-    transition: all 0.5s ease-in-out, z-index 0.5s ease-in-out 0.1s;
+  .service-title {
+    color: #2d3748;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
   }
 
-  .card:hover .profile-pic:hover {
-    transform: scale(1.3);
-    border-radius: 0px;
+  .service-description {
+    color: #718096;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
   }
 
-  .card:hover .lottie-animation {
-    transform: scale(1.5);
-    transition: all 0.5s ease-in-out 0.5s;
+  .learn-more-btn {
+    display: inline-block;
+    background: #00C6F9;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #0099cc;
+      transform: translateY(-2px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      height: auto;
+    }
+
+    .animation-container {
+      height: 200px;
+    }
   }
 `;
 

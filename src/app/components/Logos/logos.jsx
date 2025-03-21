@@ -29,7 +29,7 @@ const ClientLogos = () => {
 
   return (
     <section className="bg-white py-12">
-    <h2 className="mb-12 text-[2.5rem] font-semibold text-[#00C6F9] text-center uppercase tracking-[2px] md:text-[2rem]">
+      <h2 className="mb-12 text-[2.5rem] font-semibold text-[#00C6F9] text-center uppercase tracking-[2px] md:text-[2rem]">
         Some of our valuable clients
       </h2>
 
@@ -73,21 +73,14 @@ const ClientLogos = () => {
         </div>
       </div>
 
-      {/* CSS Animations */}
-
-
-      
-      
       <style jsx>{`
-
-      
         @keyframes scroll-left {
           0% { transform: translateX(0); }
-          100% { transform: translateX(-100%); }
+          100% { transform: translateX(-50%); }
         }
 
         @keyframes scroll-right {
-          0% { transform: translateX(-100%); }
+          0% { transform: translateX(-50%); }
           100% { transform: translateX(0); }
         }
 
@@ -100,10 +93,7 @@ const ClientLogos = () => {
         }
 
         @media (max-width: 768px) {
-          .animate-scroll-left {
-            animation-duration: 20s;
-          }
-
+          .animate-scroll-left,
           .animate-scroll-right {
             animation-duration: 20s;
           }

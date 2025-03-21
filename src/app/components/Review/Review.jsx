@@ -9,7 +9,7 @@ const Review = () => {
         <div className="flex flex-col items-center">
           <div className="text-center">
             <p className="text-lg font-bold text-sky-600 font-pj">
-              Client Reviews
+             Testimonial
             </p>
             <h2 className="mt-4 text-2xl font-bold text-gray-900 sm:text-3xl xl:text-4xl font-pj">
               Hear What Our Clients Are Saying

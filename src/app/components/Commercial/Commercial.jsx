@@ -79,7 +79,11 @@ const CommercialServicesSection = () => {
   return (
     <SectionContainer>
       <HeaderWrapper>
-        <SectionHeading>Our Residential Services</SectionHeading>
+      <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00C6F9] to-blue-800 tracking-tight mb-6 pb-4 relative group">
+  Our Commercial Services
+  {/* <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#00C6F9] to-blue-600 rounded-full transform transition-all duration-300 group-hover:from-blue-600 group-hover:to-[#00C6F9]"></span> */}
+  <span className="absolute bottom-0 left-0 w-0 h-1 bg-white transition-all duration-500 group-hover:w-full"></span>
+</h2>
         <Lottie 
           animationData={waterdrop} 
           style={{ width: 100, height: 100, marginTop: "-50px" }} 

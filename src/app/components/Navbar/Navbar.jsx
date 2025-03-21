@@ -75,13 +75,13 @@ const Navbar = () => {
         />
       </div>
       <div className="relative z-10 flex flex-wrap items-center justify-between max-w-screen-xl mx-auto p-4">
-        <div className="w-18 h-18">
-          <img
-            src="/images/uft.png"
-            className="w-full h-full bg-cover"
-            alt="Logo"
-          />
-        </div>
+      <div className="w-32 h-auto"> {/* Logo के original aspect ratio को maintain करने के लिए */}
+  <img
+    src="/images/uft.png"
+    className="w-full h-full object-contain"  /* object-contain का प्रयोग करें */
+    alt="Logo"
+  />
+</div>
         <div className="flex items-center md:order-2 space-x-1 md:space-x-2 rtl:space-x-reverse">
           <a
             href="#"
