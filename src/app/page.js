@@ -21,7 +21,7 @@ export default function Home() {
      <RequestEstimateForm/>
      <HomeExterior/>
    <Review/>
-     <FAQ/>
+     {/* <FAQ/> */}
      
     
     </div>
