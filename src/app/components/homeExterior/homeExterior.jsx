@@ -9,8 +9,10 @@ const HomeExterior = () => {
   const textControls = useAnimation();
 
   useEffect(() => {
-    controls.start("visible");
-    textControls.start("visible");
+    if (typeof window !== "undefined") {
+      controls.start("visible");
+      textControls.start("visible");
+    }
   }, [controls, textControls]);
 
   const imageVariants = {
@@ -18,7 +20,7 @@ const HomeExterior = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
@@ -27,7 +29,7 @@ const HomeExterior = () => {
     visible: {
       opacity: 1,
       x: 0,
-      transition: { duration: 0.6, ease: "easeOut", delay: 0.2 }
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.2 },
     },
   };
 
@@ -36,7 +38,7 @@ const HomeExterior = () => {
       <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr] max-w-6xl w-full gap-8">
         {/* Image Section */}
         <motion.div
-          initial="hidden"
+          initial={false}
           animate={controls}
           variants={imageVariants}
           className="flex items-center justify-center p-6"
@@ -53,7 +55,7 @@ const HomeExterior = () => {
 
         {/* Content Section */}
         <motion.div
-          initial="hidden"
+          initial={false}
           animate={textControls}
           variants={textVariants}
           className="flex flex-col justify-center p-6 space-y-6"
@@ -76,14 +78,21 @@ const HomeExterior = () => {
               className="text-lg text-gray-600 leading-relaxed"
               variants={textVariants}
             >
-              <strong className="font-semibold text-blue-600">IGotThePowerWasher</strong> delivers professional exterior cleaning services for both residential and commercial properties. As a fully licensed and insured company, we guarantee top-quality results with every project.
+              <strong className="font-semibold text-blue-600">
+                IGotThePowerWasher
+              </strong>{" "}
+              delivers professional exterior cleaning services for both residential and commercial
+              properties. As a fully licensed and insured company, we guarantee top-quality results
+              with every project.
             </motion.p>
 
             <motion.p
               className="text-lg text-gray-600 leading-relaxed"
               variants={textVariants}
             >
-              With thousands of successfully transformed properties, we're committed to making your space our next success story. Explore our verified customer reviews to see why Cincinnati trusts us for their pressure washing needs.
+              With thousands of successfully transformed properties, we&apos;re committed to making
+              your space our next success story. Explore our verified customer reviews to see why
+              Cincinnati trusts us for their pressure washing needs.
             </motion.p>
           </div>
 

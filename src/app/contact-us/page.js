@@ -1,12 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
 
-import FenceWashing from "../components/FenceWashing/fencewashing";
+
 import ContactForm from "../components/Contact/contactus";
 
-
 const ContactUs = () => {
-
   return (
     <div>
       <div className="relative flex items-center justify-center min-h-[60vh] bg-[#00C6F9] to-white bg-center bg-no-repeat bg-cover z-0">
@@ -23,7 +21,7 @@ const ContactUs = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-      Contact Us
+            Contact Us
           </motion.h1>
 
           {/* Breadcrumb Animation */}
@@ -35,23 +33,18 @@ const ContactUs = () => {
             viewport={{ once: true }}
           >
             <div className="flex gap-2 items-center">
-           
               <motion.span
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.8 }}
                 viewport={{ once: true }}
-              >
-                
-              </motion.span>
-              
+              ></motion.span>
             </div>
           </motion.div>
         </div>
       </div>
-     
-    <ContactForm/>
-    
+
+      <ContactForm />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-
+"use client"
 import {  FiMail, FiPhone, FiMapPin, FiFacebook, FiTwitter, FiInstagram,} from 'react-icons/fi';
 import RequestEstimateForm from '../homeForm/RequestEstimateForm';
 import { FaTiktok } from 'react-icons/fa';
