@@ -29,7 +29,7 @@ const ClientLogos = () => {
 
   return (
     <section className="bg-white py-12">
-      <h2 className="mb-12 text-[2.5rem] font-semibold text-[#00C6F9] text-center uppercase tracking-[2px] md:text-[2rem]">
+      <h2 className="mb-12 text-[2.5rem]  bg-gradient-to-r from-[#00C6F9] to-blue-800 text-transparent bg-clip-text font-bold text-2xl text-center uppercase tracking-[2px] md:text-[2rem]">
         Some of our valuable clients
       </h2>
 

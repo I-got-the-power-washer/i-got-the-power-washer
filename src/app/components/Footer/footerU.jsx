@@ -16,7 +16,7 @@ const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const FooterU = () => {
   return (
-    <footer className="bg-sky-200 text-[black] py-8 px-4 relative overflow-hidden min-h-[500px] md:min-h-[400px] mt-3">
+    <footer className="bg-sky-200 text-[black] py-8 px-4 relative overflow-hidden min-h-[500px] md:min-h-[400px] mt-3 ">
       {/* Full-screen Bubble Animation */}
       <div className="absolute inset-0 z-0 opacity-75">
         <Lottie
