@@ -82,8 +82,8 @@ const Pressure = () => {
                   <h4 className="text-2xl font-semibold text-gray-800 mb-4">Why Choose Us</h4>
                   <ul className="space-y-4">
                     <li className="flex items-start space-x-3">
-                      <div className="flex-shrink-0 w-6 h-6 bg-[#00C6F9] rounded-full mt-1 text-black"></div>
-                      <div>
+                      <div className="flex-shrink-0 w-6 h-6 bg-[#00C6F9] rounded-full mt-1 "></div>
+                      <div className="text-black">
                         <strong>High-Performance Equipment:</strong> We use
                         industry-leading pressure washers with up to 23 GPM output,
                         cleaning efficiently without surface damage.
@@ -91,7 +91,7 @@ const Pressure = () => {
                     </li>
                     <li className="flex items-start space-x-3">
                       <div className="flex-shrink-0 w-6 h-6 bg-[#00C6F9] rounded-full mt-1 text-black"></div>
-                      <div>
+                      <div className="text-black">
                         <strong>Post-Treatment Protection:</strong> Our specialized
                         treatment eliminates organic growth at the root, preventing
                         premature buildup.
