@@ -1,4 +1,3 @@
-
 "use client";
 import { useRef } from "react";
 
@@ -17,7 +16,7 @@ const Loader = ({ onFinish }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-white flex items-center justify-center">
+    <div className="fixed inset-0 z-50 bg-white flex items-center justify-center h-[100vh] overflow-hidden">
       <Lottie
         lottieRef={lottieRef}
         animationData={animationData}

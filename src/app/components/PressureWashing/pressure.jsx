@@ -82,7 +82,7 @@ const Pressure = () => {
                   <h4 className="text-2xl font-semibold text-gray-800 mb-4">Why Choose Us</h4>
                   <ul className="space-y-4">
                     <li className="flex items-start space-x-3">
-                      <div className="flex-shrink-0 w-6 h-6 bg-[#00C6F9] rounded-full mt-1"></div>
+                      <div className="flex-shrink-0 w-6 h-6 bg-[#00C6F9] rounded-full mt-1 text-black"></div>
                       <div>
                         <strong>High-Performance Equipment:</strong> We use
                         industry-leading pressure washers with up to 23 GPM output,
@@ -90,7 +90,7 @@ const Pressure = () => {
                       </div>
                     </li>
                     <li className="flex items-start space-x-3">
-                      <div className="flex-shrink-0 w-6 h-6 bg-[#00C6F9] rounded-full mt-1"></div>
+                      <div className="flex-shrink-0 w-6 h-6 bg-[#00C6F9] rounded-full mt-1 text-black"></div>
                       <div>
                         <strong>Post-Treatment Protection:</strong> Our specialized
                         treatment eliminates organic growth at the root, preventing
@@ -127,7 +127,7 @@ const Pressure = () => {
                   We are committed to delivering perfection with our pressure wash services.
                   From small residential jobs to large commercial projects, we offer:
                 </p>
-                <ul className="columns-2 gap-8">
+                <ul className="columns-2 gap-8 text-black">
                   {[
                     "Roof cleaning", "Fence cleaning", "House clean", 
                     "Solar panel cleaning", "Stain removals", 
@@ -144,7 +144,7 @@ const Pressure = () => {
               </div>
               <div className="space-y-6">
                 <h3 className="text-2xl font-semibold text-gray-800">Service Areas</h3>
-                <ul className="grid grid-cols-2 gap-4">
+                <ul className="grid grid-cols-2 gap-4 text-black">
                   {[
                     "Hamilton County", "Clermont County", 
                     "Butler County", "Warren County", 
@@ -183,7 +183,7 @@ const Pressure = () => {
                     <div className="bg-[#00C6F9] text-white p-2 rounded-lg mr-4">
                       🔥
                     </div>
-                    <div>
+                    <div className="text-black">
                       <strong>Hot/Cold Washers:</strong> For grease removal and general cleaning
                     </div>
                   </li>
@@ -191,7 +191,7 @@ const Pressure = () => {
                     <div className="bg-[#00C6F9] text-white p-2 rounded-lg mr-4">
                       🚿
                     </div>
-                    <div>
+                    <div className="text-black">
                       <strong>High-Pressure Nozzles:</strong> Up to 4000 PSI force
                     </div>
                   </li>
@@ -199,7 +199,7 @@ const Pressure = () => {
                     <div className="bg-[#00C6F9] text-white p-2 rounded-lg mr-4">
                       🚚
                     </div>
-                    <div>
+                    <div className="text-black">
                       <strong>Specialized Fleet:</strong> Mobile cleaning solutions
                     </div>
                   </li>
