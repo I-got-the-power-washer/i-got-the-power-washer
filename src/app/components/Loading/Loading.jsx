@@ -2,7 +2,7 @@
 "use client";
 import { useRef } from "react";
 import Lottie from "lottie-react";
-import animationData from "../../../../public/animations/loading.json";
+import animationData from "../../../../public/animations/loading-page.json";
 
 const Loader = ({ onFinish }) => {
   const lottieRef = useRef();
