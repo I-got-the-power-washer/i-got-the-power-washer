@@ -13,9 +13,9 @@ const Lottie = dynamic(() => import("lottie-react"), {
 import BubblesAnimation from '../../../../public/animations/Roof washing.json';
 import ManCleaningWindow from '../../../../public/animations/residential-window.json';
 import Gutter from "../../../../public/animations/Man doing Gutter Cleaning.json";
-import Professional from "../../../../public/animations/Professional Cleaner.json";
-import Stain from "../../../../public/animations/stain-cleaning.json";
-import Check from "../../../../public/animations/House wash.json";
+import Professional from "../../../../public/animations/Man doing Power Washing.json";
+import Stain from "../../../../public/animations/seal solution.json";
+import Check from "../../../../public/animations/House washing.json";
 import waterdrop from '../../../../public/animations/Floor Washing.json';
 
 const ServicesSection = () => {
@@ -42,11 +42,12 @@ const ServicesSection = () => {
     },
     {
       id: 3,
-      name: "Gutter Cleaning",
-      about: "Complete gutter cleaning and protection solutions",
-      link: "/gutter-cleaning",
-      animationData: Gutter,
+      name: "Roof Washing",
+      about: "Deck cleaning and sealing services",
+      link: "/roof-washing",
+      animationData: BubblesAnimation,
     },
+  
     {
       id: 4,
       name: "Window Cleaning",
@@ -54,13 +55,15 @@ const ServicesSection = () => {
       link: "/window-cleaning-cincinnati",
       animationData: ManCleaningWindow,
     },
+  
     {
       id: 5,
-      name: "Roof Washing",
-      about: "Deck cleaning and sealing services",
-      link: "/roof-washing",
-      animationData: BubblesAnimation,
+      name: "Gutter Cleaning",
+      about: "Complete gutter cleaning and protection solutions",
+      link: "/gutter-cleaning",
+      animationData: Gutter,
     },
+    
     {
       id: 6,
       name: "Seal Solutions",

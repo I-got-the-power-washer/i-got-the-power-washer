@@ -11,16 +11,16 @@ const Lottie = dynamic(() => import("lottie-react"), {
 });
 
 // Import animations
-import BubblesAnimation from '../../../../public/animations/Bubbles';
+import BubblesAnimation from '../../../../public/animations/seal solution.json';
 
 import ManCleaningWindow from '../../../../public/animations/Worker washing windows of the modern building.json'
 import Gutter from "../../../../public/animations/Man doing Gutter Cleaning.json"
 import Professional from "../../../../public/animations/Boy Window Cleaning.json"
-import Stain from "../../../../public/animations/Stain remover.json" // Adjust path as needed
+import Stain from "../../../../public/animations/stain remover.json" // Adjust path as needed
 import Check from "../../../../public/animations/Flood.json"
 import waterdrop from '../../../../public/animations/Floor Washing.json'
-import Parking from "../../../../public/animations/Parking lot.json"
-import building from "../../../../public/animations/Building wash.json"
+import Parking from "../../../../public/animations/parking.json"
+import building from "../../../../public/animations/building.json"
 
 const CommercialServicesSection = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -74,16 +74,16 @@ const CommercialServicesSection = () => {
       animationData: Stain,
     },
   ];
+
   if (!isMounted) return null;
 
   return (
     <SectionContainer>
       <HeaderWrapper>
-      <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00C6F9] to-blue-800 tracking-tight mb-6 pb-4 relative group">
-  Our Commercial Services
-  {/* <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#00C6F9] to-blue-600 rounded-full transform transition-all duration-300 group-hover:from-blue-600 group-hover:to-[#00C6F9]"></span> */}
-  <span className="absolute bottom-0 left-0 w-0 h-1 bg-white transition-all duration-500 group-hover:w-full"></span>
-</h2>
+        <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#00C6F9] to-blue-800 tracking-tight mb-6 pb-4 relative group">
+          Our Commercial Services
+          <span className="absolute bottom-0 left-0 w-0 h-1 bg-white transition-all duration-500 group-hover:w-full"></span>
+        </h2>
         <Lottie 
           animationData={waterdrop} 
           style={{ width: 100, height: 100, marginTop: "-50px" }} 
@@ -158,7 +158,7 @@ const Card = ({ animationData, name, about, link }) => {
   );
 };
 
-// Styled Components
+// Styled Components with height adjustments
 const SectionContainer = styled.section`
   background: #fff;
   padding: 4rem 2rem;
@@ -173,19 +173,6 @@ const HeaderWrapper = styled.div`
   align-items: center;
   gap: 1px;
   margin-bottom: 3rem;
-`;
-
-const SectionHeading = styled.h1`
-  color: #00C6F9;
-  font-size: 2.5rem;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  
-  @media (max-width: 768px) {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-  }
 `;
 
 const CardsGrid = styled.div`
@@ -208,7 +195,7 @@ const CardsGrid = styled.div`
 const StyledWrapper = styled.div`
   .card {
     width: 320px;
-    height: 320px;
+    height: 380px; /* Increased from 320px */
     background: white;
     border-radius: 32px;
     padding: 3px;
@@ -219,14 +206,14 @@ const StyledWrapper = styled.div`
 
     @media (max-width: 768px) {
       width: 280px;
-      height: 280px;
+      height: 340px; /* Increased from 280px */
     }
   }
 
   .profile-pic {
     position: absolute;
     width: calc(100% - 6px);
-    height: calc(100% - 6px);
+    height: 65%; /* Increased from full height */
     top: 3px;
     left: 3px;
     border-radius: 29px;
@@ -243,7 +230,7 @@ const StyledWrapper = styled.div`
   .lottie-animation {
     width: 100%;
     height: 100%;
-    transform: scale(1.2);
+    transform: scale(1); /* Reduced from 1.2 */
   }
 
   .lottie-loading {
@@ -270,6 +257,7 @@ const StyledWrapper = styled.div`
     transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   }
 
+  /* Keep all hover effects and other styles the same below */
   .content {
     position: absolute;
     bottom: 0;
@@ -289,7 +277,7 @@ const StyledWrapper = styled.div`
     display: block;
     font-size: 1rem;
     color: white;
-    margin-top: 1rem;
+    margin-top: 8px;
   }
 
   .bottom-bottom {
