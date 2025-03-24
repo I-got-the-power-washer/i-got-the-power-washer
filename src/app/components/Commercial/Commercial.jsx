@@ -359,6 +359,78 @@ const StyledWrapper = styled.div`
     transform: scale(1.5);
     transition: all 0.5s ease-in-out 0.5s;
   }
+    .bottom-bottom {
+  position: absolute;
+  bottom: 1rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  /* Add mobile-specific fixes */
+  @media (max-width: 768px) {
+    flex-wrap: nowrap;
+    gap: 8px;
+    bottom: 0.5rem;
+  }
+}
+
+.service-name-container {
+  background: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  flex-grow: 1;
+  margin-right: 1rem;
+  
+  /* Add text overflow handling */
+  @media (max-width: 768px) {
+    min-width: 60%;
+    white-space: normal; /* Allow text wrapping */
+    overflow: visible;
+    margin-right: 0;
+  }
+}
+
+.button {
+  background: white;
+  color: #00C6F9;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  box-shadow: rgba(96, 75, 74, 0.133) 0px 5px 5px 0px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  display: inline-block;
+  
+  /* Mobile-specific button fixes */
+  @media (max-width: 768px) {
+    flex-shrink: 0;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    min-width: 100px;
+  }
+
+  &:hover {
+    background: #00A3CC;
+    color: white;
+  }
+}
+
+/* Add this new media query at bottom */
+@media (max-width: 480px) {
+  .service-name {
+    font-size: 0.8rem;
+  }
+  
+  .button {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
 `;
 
 export default CommercialServicesSection;
