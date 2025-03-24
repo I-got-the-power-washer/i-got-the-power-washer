@@ -13,11 +13,11 @@ const Lottie = dynamic(() => import("lottie-react"), {
 // Import animations
 import BubblesAnimation from '../../../../public/animations/seal solution.json';
 
-import ManCleaningWindow from '../../../../public/animations/Worker washing windows of the modern building.json'
+
 import Gutter from "../../../../public/animations/Man doing Gutter Cleaning.json"
 import Professional from "../../../../public/animations/Boy Window Cleaning.json"
-import Stain from "../../../../public/animations/stain remover.json"
-import Check from "../../../../public/animations/Flood.json"
+import Stain from "../../../../public/animations/stain-removal.json"
+
 import waterdrop from '../../../../public/animations/Floor Washing.json'
 import Parking from "../../../../public/animations/parking.json"
 import building from "../../../../public/animations/building.json"
