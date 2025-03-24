@@ -16,12 +16,19 @@ const Loader = ({ onFinish }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-white flex items-center justify-center h-[100vh] overflow-hidden">
+    <div className="fixed inset-0 z-50 bg-white flex items-center justify-center min-h-screen h-screen">
       <Lottie
         lottieRef={lottieRef}
         animationData={animationData}
         loop={false}
         onComplete={handleComplete}
+        className="lottie-animation" // Adding className for Tailwind scaling
+        style={{
+          width: "100%",
+          height: "100%",
+          transform: "scale(3)", // Default scale
+          transformOrigin: "center center",
+        }}
       />
     </div>
   );
