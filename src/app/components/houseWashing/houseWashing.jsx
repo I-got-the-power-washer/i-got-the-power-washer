@@ -6,20 +6,20 @@ import GalleryPage from "../Gallery/gallery";
 const HouseComponent = () => {
   const PressureImages = [
     {
-      before: "/images/1.jpeg",
-      after: "/images/2.jpeg",
+      before: "/images/5-1.jpg",
+      after: "/images/4-1.jpg",
     },
     {
-      before: "/images/3.jpeg",
-      after: "/images/4.jpeg",
+      before: "/images/20.jpg",
+      after: "/images/18.jpg",
     },
     {
-      before: "/images/1.jpeg",
-      after: "/images/2.jpeg",
+      before: "/images/ssde.png",
+      after: "/images/fjdsh.png",
     },
     {
-      before: "/images/3.jpeg",
-      after: "/images/4.jpeg",
+      before: "/images/media_20250212_221104_2401613298102951531.jpg",
+      after: "/images/media_20250212_221104_8229967078494439592.jpg",
     },
   ];
   return (
