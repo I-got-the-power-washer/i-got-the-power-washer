@@ -16,7 +16,7 @@ import BubblesAnimation from '../../../../public/animations/seal solution.json';
 import ManCleaningWindow from '../../../../public/animations/Worker washing windows of the modern building.json'
 import Gutter from "../../../../public/animations/Man doing Gutter Cleaning.json"
 import Professional from "../../../../public/animations/Boy Window Cleaning.json"
-import Stain from "../../../../public/animations/stain remover.json" // Adjust path as needed
+import Stain from "../../../../public/animations/stain remover.json"
 import Check from "../../../../public/animations/Flood.json"
 import waterdrop from '../../../../public/animations/Floor Washing.json'
 import Parking from "../../../../public/animations/parking.json"
