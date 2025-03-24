@@ -82,10 +82,10 @@ const ServicesSection = () => {
           Our Residential Services
           <span className="absolute bottom-0 left-0 w-0 h-1 bg-white transition-all duration-500 group-hover:w-full"></span>
         </h2>
-        <Lottie 
+        {/* <Lottie 
           animationData={waterdrop} 
           style={{ width: 100, height: 100, marginTop: "-50px" }} 
-        />
+        /> */}
       </HeaderWrapper>
       <CardsGrid>
         {cardsData.map(card => (

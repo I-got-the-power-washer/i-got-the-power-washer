@@ -85,11 +85,11 @@ const ClientLogos = () => {
         }
 
         .animate-scroll-left {
-          animation: scroll-left 25s linear infinite;
+          animation: scroll-left 45s linear infinite;
         }
 
         .animate-scroll-right {
-          animation: scroll-right 25s linear infinite;
+          animation: scroll-right 45s linear infinite;
         }
 
         @media (max-width: 768px) {
