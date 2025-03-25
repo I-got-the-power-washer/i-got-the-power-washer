@@ -1,6 +1,6 @@
 "use client";
 import { useRef } from "react";
-import animationData from "../../../../public/animations/loading-screen.json";
+import animationData from "../../../../public/animations/final-animation.json";
 import dynamic from "next/dynamic";
 
 const Lottie = dynamic(() => import("lottie-react"), {
@@ -24,7 +24,7 @@ const Loader = ({ onFinish }) => {
           style={{
             width: '150vw',  
             height: '150vh', 
-            transform: 'translate(-50%, -50%) scale(2)',
+            transform: 'translate(-50%, -50%) scale(1.25)',
             position: 'absolute',
             top: '50%',
             left: '50%',
