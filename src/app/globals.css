@@ -43,3 +43,12 @@ h1, h2, h3, h4, h5, h6 {
 p{
   font-family: "Barlow", sans-serif !important;
 }
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.loader-exit {
+  animation: fadeOut 0.3s ease-out forwards;
+}
