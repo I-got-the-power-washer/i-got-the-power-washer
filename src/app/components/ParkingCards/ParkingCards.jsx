@@ -14,7 +14,7 @@ const ParkingCards = () => {
     {
       id: 2,
       name: "Sweeping & Cleaning",
-      about: "We provide sweeping and cleaning for parking lots, removing dirt, leaves, and trash. Keep your lot neat and safe, enhancing both curb appeal and functionality. ",
+      about: "We provide sweeping and cleaning for parking lots, removing dirt, leaves, and trash. Keep your lot neat and safe, enhancing both curb appeal ",
       imageSrc: "/images/Sweeping-Cleaning.png",
       link:"/sweeping-cleaning"
     },
