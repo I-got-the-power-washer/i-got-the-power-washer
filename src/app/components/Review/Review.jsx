@@ -189,7 +189,7 @@ const Review = () => {
                     </div>
                     <blockquote className="flex-1 mt-4">
                       <p className="text-lg leading-relaxed text-gray-900 font-pj">
-                        “I could not recommend Tony and his business any higher. He did a tremendous job on a large project (see before and after photos). He was efficient, on time, organized, and always in touch. He didn’t try to over-sell products and stuck to..”
+                        “I could not recommend Tony and his business any higher. He did a tremendous job on a large project (see before and after photos). He was efficient, on time, organized, and always in touch. He didn’t try to over-sell products and stuck to what I was looking for.”
                       </p>
                     </blockquote>
                   </div>
