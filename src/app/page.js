@@ -15,15 +15,15 @@ export default function Home() {
 
   return (
     <div className="relative">
-      
+      {/* Loader with blur overlay */}
       {loading && (
-        <div className="fixed inset-0 z-50 bg-transparent">
+        <div className="fixed inset-0 z-50 bg-white/90 backdrop-blur-sm">
           <Loader onFinish={() => setLoading(false)} />
         </div>
       )}
 
-      
-      <div className={`${loading ? 'opacity-100' : 'opacity-100'}`}>
+      {/* Main Content with blur transition */}
+      <div className={`transition-all duration-500 ${loading ? 'blur-sm' : 'blur-none'}`}>
         <ResponsiveImage
           src="/images/Web-1-1536x1152 (1).webp"
           alt="Professional pressure washing services in Cincinnati"
